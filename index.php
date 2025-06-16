@@ -1,50 +1,23 @@
 <?php
+include 'config/database.php';
+include 'views/layouts/header.php';
 ?>
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>MOTOS</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="btn-menu">
-          <label for="btn-menu">☰</label>
-        </div>
-        <div class="logo">
-          <!-- <img src="img/vcj.jpeg" alt=""> -->
-          <h1>VCJ MOTOS</h1>
-        </div>
-        <!-- <nav class="menu">
-          <a href="#">Urbanas</a>
-          <a href="#">Todo Terreno</a>
-          <a href="#">Deportivas</a>
-          <a href="#">Automaticas</a>
-          <a href="#">SemiAutomaticas</a>
-          <a href="#">Adventure</a>
-          <a href="#">Enduro</a>
-          <a href="#">Super Deportivas</a>
-        </nav> -->
-      </div>
-    </header>
-    <div class="capa"></div>
-    <input type="checkbox" id="btn-menu" />
-    <div class="container-menu">
-      <div class="cont-menu">
-        <nav>
-          <h1>Inicia Sesión</h1>
-          <form action="">
-            <p>Email:</p>
-            <input type="text" placeholder="Email">
-            <p>Contraseña:</p>
-            <input type="text" placeholder="Contraseña">
-            <button class="btn-iniciar">Iniciar Sesión</button>
-          </form>
-        </nav>
-        <label for="btn-menu">✖️</label>
-      </div>
-    </div>
-  </body>
-</html>
+<link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/inicio.css">
+<div class="contenedor">
+    <ul>
+        <li><a class="text" href="./views/user/login.php">iniciar sesion</a></li>
+       
+     <li><a href="?registro=1">Registrarse</a></li>
+        <?php
+        if (isset($_GET['registro'])) {
+            include './views/user/register.php';
+        }
+        ?>  
+    </ul>
+
+
+
+
+</div>
+
+<?php include 'views/layouts/footer.php'; ?>

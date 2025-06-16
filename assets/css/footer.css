@@ -1,0 +1,18 @@
+#pie{
+    position: relative;
+    width: 90%;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    top: 50px;
+    margin-left: 75px;
+}
+.parrafo{
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ✅ Centrado exacto */
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
