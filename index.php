@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 session_start(); // asegúrate de tener esto al inicio
+=======
+
+>>>>>>> 596488b8c0aed32976c3a4c338d844a1d51f11b0
 include 'config/database.php';
 include 'views/layouts/header.php';
 include 'config/parametros.php';
@@ -8,6 +12,7 @@ include 'config/parametros.php';
 
 <div class="contenedor">
     <ul>
+<<<<<<< HEAD
         <?php if (!isset($_SESSION['usuario'])): ?>
             <!-- Mostrar botones solo si NO ha iniciado sesión -->
             <li><a class="text" href="?view=login">Iniciar sesión</a></li>
@@ -34,6 +39,50 @@ include 'config/parametros.php';
     <?php
    if (isset($_GET['view'])) {
     $vista = $_GET['view'];
+=======
+        <li><a class="text" href="./views/user/login.php">iniciar sesion</a></li>
+       
+     <li><a href="?registro=1">Registrarse</a></li>
+        <?php
+        if (isset($_GET['registro'])) {
+            include './views/user/register.php';
+        }
+        ?>
+          
+    </ul>
+
+<?php
+// Miramos si en la URL hay algo como ?controller=algo&action=otraCosa
+if (isset($_GET['controller']) && isset($_GET['action'])) {
+    // Guardamos el nombre del controlador y lo que queremos que haga (la acción)
+    $nombreControlador = $_GET['controller'];
+    $accion = $_GET['action'];
+
+    // Buscamos el archivo del controlador según lo que vino en la URL
+    $archivo = 'controllers/controlador-' . $nombreControlador . '.php';
+
+    // Le ponemos Controlador al principio para formar el nombre de la clase
+    $clase = 'Controlador' . ucfirst($nombreControlador); 
+
+    // Si ese archivo sí existe en la carpeta, lo usamos
+    if (file_exists($archivo)) {
+        require_once $archivo;
+
+        // Creamos un nuevo objeto del controlador (como prenderlo pa que funcione)
+        $controlador = new $clase();
+
+        // Revisamos si ese controlador tiene la funcion que pedimos (como create o store)
+        if (method_exists($controlador, $accion)) {
+            $controlador->$accion(); // Aquí ya hacemos que se ejecute esa funcion, como guardar o mostrar
+        } else {
+            echo "<p> Esa función '$accion' no existe en ese controlador.</p>";
+        }
+    } else {
+        echo "<p> No encontramos ese controlador llamado '$archivo'.</p>";
+    }
+}
+?>
+>>>>>>> 596488b8c0aed32976c3a4c338d844a1d51f11b0
 
     if (isset($_SESSION['usuario']) && ($vista === 'login' || $vista === 'register')) {
         echo "<p>Ya estás logueado.</p>";
