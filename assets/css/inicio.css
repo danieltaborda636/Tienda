@@ -1,6 +1,12 @@
+
 .text{
     font-size: 25px;
     color: black;
+    text-decoration: none;
+}
+.tex{
+    font-size: 25px;
+    color: rgb(5, 63, 252);
     text-decoration: none;
 }
 .contenedor{
@@ -11,4 +17,56 @@
     border: 2px solid black;
     left: 76px;
     top: 50px;
+}
+.granContenedor{
+    position: relative;
+    width: 1053px;
+    height:500px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    left: 376px;
+    top: -450px;
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Aumenta el tamaño mínimo */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* Centra las cards dentro del grid */
+}
+
+.product-card {
+    width: 280px; /* ← Tamaño fijo de la card */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
 }

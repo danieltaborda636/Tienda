@@ -4,9 +4,26 @@
     width: 300px;
     height: 500px;
     background-color: rgb(255, 255, 255);
-    border: 2px solid black;
-    left: -42px;
-    top: -63px;
+    border: 1px solid black;
+    top: -91px;
+    display: flex;
+    flex-direction: column;
+    text-align: center ;
+    
+}
+.cont{
+    position: relative;
+    width: 300px;
+    height: 520px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    top: -268px;
+    display: flex;
+    flex-direction: column;
+    text-align: center ;
+}
+.titulos{
+  text-align: center;
 }
 
 input{
@@ -20,16 +37,40 @@ input{
   color: rgb(0, 0, 0);
   margin: 10px;
 }
+
+.btn-iniciar{
+  margin: 15px;
+  padding: 5px;
+  background-color: rgb(163, 236, 163);
+  border-radius: 4px;
+  border: 1px solid black;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.btn-iniciar:hover{
+  transform: scale(1.01);
+}
+
 .mensaje-exito {
   color: green;
   font-weight: bold;
   margin: 15px;
-  font-size: 20px;
+  font-size: 10px;
 }
 .mensaje-error {
   color: red;
   font-weight: bold;
   margin: 15px;
-  font-size: 20px;
+  font-size: 10px;
 }
+.mensaje-campos{
+  color: rgb(0, 21, 255);
+  font-weight: bold;
+  margin: 15px;
+  font-size: 10px;
+}
+
+
+
 

@@ -1,49 +1,27 @@
-<?php
-?>
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Inicio de sesion</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="btn-menu">
-          <label for="btn-menu">☰</label>
+
+<title>Iniciar Sesión</title>
+<link rel="stylesheet" href="<?= base_url ?>/assets/css/style.css">
+
+<div class="container">
+    <h1>Iniciar sesión</h1>
+
+    <?php if (isset($_GET['login'])): ?>
+        <div class="mensaje">
+            <?php if ($_GET['login'] == 'error'): ?>
+                <p class="mensaje-error">Email o contraseña incorrectos.</p>
+            <?php endif; ?>
         </div>
-        <div class="logo">
-          <!-- <img src="img/vcj.jpeg" alt=""> -->
-          <h1>VCJ MOTOS</h1>
-        </div>
-        <!-- <nav class="menu">
-          <a href="#">Urbanas</a>
-          <a href="#">Todo Terreno</a>
-          <a href="#">Deportivas</a>
-          <a href="#">Automaticas</a>
-          <a href="#">SemiAutomaticas</a>
-          <a href="#">Adventure</a>
-          <a href="#">Enduro</a>
-          <a href="#">Super Deportivas</a>
-        </nav> -->
-      </div>
-    </header>
-    <div class="capa"></div>
-    <input type="checkbox" id="btn-menu" />
-    <div class="container-menu">
-      <div class="cont-menu">
-        <nav>
-          <h1>Inicia Sesión</h1>
-          <form action="" method="$_POST">
-            <p>Email:</p>
-            <input type="email" placeholder="Email">
-            <p>Contraseña:</p>
-            <input type="password" placeholder="Contraseña">
-            <button class="btn-iniciar">Iniciar Sesión</button>
-          </form>
-        </nav>
-        <label for="btn-menu">✖️</label>
-      </div>
-    </div>
-  </body>
-</html>
+    <?php endif; ?>
+
+    <form action="<?= base_url ?>/controllers/UserController.php" method="POST">
+        <p class="parrafos">Correo electrónico:</p>
+        <input type="email" name="email" placeholder="Gmail" required>
+
+        <p class="parrafos">Contraseña:</p>
+        <input type="password" name="password" placeholder="Contraseña" required>
+
+        <button class="btn-iniciar" type="submit" name="login">Iniciar sesión</button>
+    </form>
+
+</div>
+

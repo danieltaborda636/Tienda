@@ -1,34 +1,50 @@
 <?php
 session_start();
-require_once '../config/database.php'; // Ok
+require_once '../config/database.php';
+require_once '../models/User.php';
 
-$mensaje = ""; 
 
-if (!isset($_POST["enviar"])) {
-    require_once '../views/user/register.php';
-} else {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
+    $email    = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    $user = new user();
+    $usuario = $user->login($email, $password);
+
+    if ($usuario) {
+        $_SESSION['usuario'] = $usuario;
+        header("Location: ../index.php");
+        exit;
+    } else {
+        header("Location: ../index.php?view=login&login=error");
+        exit;
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enviar'])) {
     $Nombre    = trim($_POST["Nombre"]);
-    $Apellidos  = trim($_POST["Apellidos"]);
+    $Apellidos = trim($_POST["Apellidos"]);
     $email     = trim($_POST["email"]);
     $password  = trim($_POST["password"]);
 
     if (empty($Nombre) || empty($Apellidos) || empty($email) || empty($password)) {
-        $mensaje = "Por favor, completa todos los campos.";
+        header("Location: ../index.php?view=register&registro=campos_invalidos");
+        exit;
     } else {
-        require_once '../models/User.php';
         $user = new user();
         $registrado = $user->registrar($Nombre, $Apellidos, $email, $password);
 
-        if ($registrado) {
-            header("Location: ../index.php?controller=user&action=register&registro=exito");
+        if ($registrado === true) {
+            header("Location: ../index.php?view=register&registro=exito");
+            exit;
+        } elseif ($registrado === "duplicado") {
+            header("Location: ../index.php?view=register&registro=duplicado");
             exit;
         } else {
-            header("Location:register.php?controller=user&action=register&registro=error");
+            header("Location: ../index.php?view=register&registro=error");
             exit;
         }
 
     }
-
-    require_once '../views/user/register.php';
 }
 ?>
