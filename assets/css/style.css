@@ -22,6 +22,16 @@
     flex-direction: column;
     text-align: center ;
 }
+.contenedorproducto{
+  position: relative;
+    width: 1050px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    top: -471px;
+    display: flex;
+    flex-direction: column;
+}
 .titulos{
   text-align: center;
 }
@@ -71,6 +81,12 @@ input{
   font-size: 10px;
 }
 
+.crear-producto2{
+  text-align: right;
+  position: relative;
+  top: -400px;
+  margin: 25px;
+}
 
 
 
