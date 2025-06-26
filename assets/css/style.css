@@ -24,13 +24,16 @@
 }
 .contenedorproducto{
   position: relative;
-    width: 1050px;
+    width: 45%;
     height: 500px;
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
-    top: -471px;
     display: flex;
     flex-direction: column;
+}
+.crearproducto{
+  width: 55%;
+  background-color: rgb(255, 255, 255);
 }
 .titulos{
   text-align: center;

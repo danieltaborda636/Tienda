@@ -1,5 +1,5 @@
 <?php
-require_once './config/database.php';
+require_once __DIR__ . '/../config/database.php';
 
 class Product {
     private $db;
@@ -13,5 +13,16 @@ class Product {
         $sql = "SELECT * FROM productos ORDER BY id DESC";
         $resultado = $this->db->query($sql);
         return $resultado;
+    }
+
+    // Obtener un producto por ID (con categoría)
+    public function obtenerPorId($id) {
+        $id = $this->db->real_escape_string($id);
+        $sql = "SELECT p.*, c.nombre AS categoria_nombre 
+                FROM productos p
+                INNER JOIN categorias c ON p.categoria_id = c.id
+                WHERE p.id = $id LIMIT 1";
+        $resultado = $this->db->query($sql);
+        return $resultado->fetch_assoc();
     }
 }

@@ -36,6 +36,8 @@
                 </br>
         
             <button class="btn-iniciar"type="submit" name="enviar">Registrar</button>
+            <a href="<?=base_url?>/index.php">atras</a>
+        
           </form>
       
 

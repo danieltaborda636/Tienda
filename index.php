@@ -15,7 +15,7 @@ if (isset($_GET['controller']) && isset($_GET['action'])) {
 
         if (method_exists($controlador, $action)) {
             call_user_func([$controlador, $action]);
-            exit; // Termina la ejecución para que no cargue abajo el HTML general
+            exit;
         } else {
             die("❌ La acción '$action' no existe en el controlador '$nombreClase'.");
         }
@@ -37,13 +37,13 @@ include 'config/parametros.php';
         <?php if (!isset($_SESSION['usuario'])): ?>
             <li><a class="text" href="?view=login">Iniciar sesión</a></li>
             <li><a class="text" href="?view=register">Registrarse</a></li>
-        
+
         <?php elseif ($_SESSION['usuario']['rol'] === 'admin'): ?>
             <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
-            <li><a class="text" href="#">Ver carrito</a></li>
+            <li><a class="text" href="./visualizacion.php">Ver carrito</a></li>
             <li><a class="text" href="#">Mis pedidos</a></li>
             <li><a class="text" href="#">Gestionar Pedidos</a></li>
-            <li><a class="text" href="?view=create">Crear producto</a></li>
+            <li><a class="text" href="./visualizacion.php">Crear producto</a></li>
             <li><a class="text" href="?view=categoria">Crear categoría</a></li>
             <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>
 
@@ -67,40 +67,33 @@ include 'config/parametros.php';
             } elseif ($vista === "login") {
                 include 'views/user/login.php';
             } elseif ($vista === "categoria") {
-                include 'views/user/categoria.php'; 
-            } 
+                include 'views/user/categoria.php';
             }
+        }
     }
     ?>
 </div>
 
 <div class="granContenedor">
     <?php
-    require_once 'models/product.php';
-    $product = new Product();
-    $productos = $product->obtenerTodos();
+    if (isset($_GET['view']) && $_GET['view'] === "producto" && isset($_GET['id'])) {
+        include 'views/user/producto.php';
+    } else {
+        require_once 'models/product.php';
+        $product = new Product();
+        $productos = $product->obtenerTodos();
     ?>
-
-   <div class="product-grid">
-    <?php while ($prod = $productos->fetch_assoc()): ?>
-        <div class="product-card">
-            <img src="archivos-subidos/productos/<?= $prod['imagen'] ?>" alt="<?= $prod['nombre'] ?>">
-            <h3><?= $prod['nombre'] ?></h3>
-            <p>$<?= number_format($prod['precio'], 0, ',', '.') ?></p>
-            <a href="producto.php?id=<?= $prod['id'] ?>" class="btn">Comprar</a>
+        <div class="product-grid">
+            <?php while ($prod = $productos->fetch_assoc()): ?>
+                <div class="product-card">
+                    <img src="archivos-subidos/productos/<?= $prod['imagen'] ?>" alt="<?= $prod['nombre'] ?>">
+                    <h3><?= $prod['nombre'] ?></h3>
+                    <p>$<?= number_format($prod['precio'], 0, ',', '.') ?></p>
+                    <a href="/tienda_motos/Tienda/?view=producto&id=<?= $prod['id'] ?>" class="btn">Comprar</a>
+                </div>
+            <?php endwhile; ?>
         </div>
-    <?php endwhile; ?>
-
-    <?php
-    if (isset($_GET['view'])) {
-        $vista = $_GET['view'];
-        if ($vista === "create") {
-                include 'views/user/create.php'; 
-            }
-        }
-    ?>
-</div>
-
+    <?php } ?>
 </div>
 
 <?php include 'views/layouts/footer.php'; ?>
