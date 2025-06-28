@@ -90,6 +90,51 @@ input{
   top: -400px;
   margin: 25px;
 }
-
+.gran{
+  width: 892px;
+}
+textarea{
+  border-radius: 10px;
+  height: 90px;
+  width: 300px;
+  border: 2px solid black;
+}
+form{
+  margin-left: 10px;
+}
+h2{
+  margin-left: 10px;
+}
+.crearproducto{
+  margin-left: 10px;
+  margin-top: 20px;
+}
+select{
+  border-radius: 5px;
+  height: 40px;
+  border: 2px solid black;
+}
+.guardar{
+  height: 35px;
+  border-radius: 7px;
+  margin-top: 60px;
+}
+.guardar:hover{
+  background-color: #2dda33;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+#nombre{
+  height: 35px;
+  margin-left: 1px;
+}
+#precio{
+  height: 35px;
+  margin-left: 1px;
+}
+#stock{
+  height: 35px;
+  margin-left: 1px;
+}
 
 
