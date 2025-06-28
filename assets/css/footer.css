@@ -1,11 +1,11 @@
 #pie{
     position: relative;
-    width: 90%;
-    height: 30px;
+    width: 1201px;
+    height: 35px;
     background-color: rgb(255, 255, 255);
     border: 2px solid black;
     top: -452px;
-    margin-left: 75px;
+    margin-left: 67px;
 }
 .parrafo{
     position: absolute;
