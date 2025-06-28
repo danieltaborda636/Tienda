@@ -1,8 +1,10 @@
-
 .text{
     font-size: 25px;
     color: black;
     text-decoration: none;
+}
+.text:hover{
+    transition: transform 0.2s ease;
 }
 .tex{
     font-size: 25px;
@@ -11,11 +13,11 @@
 }
 .contenedor{
     position: relative;
-    width: 300px;
+    width: 320px;
     height:500px;
     background-color: rgb(255, 255, 255);
     border: 2px solid black;
-    left: 76px;
+    left: 67px;
     top: 50px;
 }
 .granContenedor{

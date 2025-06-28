@@ -36,15 +36,15 @@ include 'views/layouts/header.php';
 <div class="contenedor">
     <ul>
         <?php if (!isset($_SESSION['usuario'])): ?>
-            <li><a class="text" href="?view=login">Iniciar sesión</a></li>
+            <li><a class="text" href="?view=login">Iniciar sesión</a></li><br>
             <li><a class="text" href="?view=register">Registrarse</a></li>
         <?php elseif ($_SESSION['usuario']['rol'] === 'admin'): ?>
             <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
-            <li><a class="text" href="./visualizacion.php">Ver carrito</a></li>
-            <li><a class="text" href="#">Mis pedidos</a></li>
-            <li><a class="text" href="#">Gestionar Pedidos</a></li>
-            <li><a class="text" href="./visualizacion.php">Crear producto</a></li>
-            <li><a class="text" href="?view=categoria">Crear categoría</a></li>
+            <li><a class="text" href="./visualizacion.php">Ver carrito</a></li><br>
+            <li><a class="text" href="#">Mis pedidos</a></li><br>
+            <li><a class="text" href="#">Gestionar Pedidos</a></li><br>
+            <li><a class="text" href="./visualizacion.php">Crear producto</a></li><br>
+            <li><a class="text" href="?view=categoria">Crear categoría</a></li><br>
             <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>
         <?php else: ?>
             <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
@@ -136,7 +136,7 @@ $resultado_categorias = mysqli_query($conexion, $sql_categorias);
         <select id="oferta" name="oferta">
             <option value="SI">Sí</option>
             <option value="NO">No</option>
-        </select><br>
+        </select><br><br>
 
         <label for="categoria_id">Categoría:</label><br>
         <select id="categoria_id" name="categoria_id" required>
@@ -144,12 +144,12 @@ $resultado_categorias = mysqli_query($conexion, $sql_categorias);
             <?php while ($cat = $resultado_categorias->fetch_assoc()) : ?>
                 <option value="<?php echo $cat['id']; ?>"><?php echo $cat['nombre']; ?></option>
             <?php endwhile; ?>
-        </select><br>
+        </select><br><br>
 
         <label for="img">Imagen del producto:</label><br>
-        <input type="file" id="img" name="img" accept="image/*" required><br>
+        <input class="imagen "type="file" id="img" name="img" accept="image/*" required><br>
 
-        <button type="submit">Guardar producto</button>
+        <button class="guardar" type="submit">Guardar producto</button>
 </div>
     </form>
 </div>
