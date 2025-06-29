@@ -1,7 +1,7 @@
 
 .container{
     position: relative;
-    width: 300px;
+    width: 310px;
     height: 500px;
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
@@ -10,6 +10,10 @@
     flex-direction: column;
     text-align: center ;
     
+}
+.granContenedor{
+    position: relative;
+    width: 893px;
 }
 .cont{
     position: relative;
@@ -64,6 +68,19 @@ input{
 .btn-iniciar:hover{
   transform: scale(1.01);
 }
+.btn-atras{
+  margin: 15px;
+  padding: 5px;
+  background-color: rgb(163, 236, 163);
+  border-radius: 4px;
+  border: 1px solid black;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.btn-atras:hover{
+  transform: scale(1.01);
+}
 
 .mensaje-exito {
   color: green;
@@ -90,6 +107,64 @@ input{
   top: -400px;
   margin: 25px;
 }
-
-
-
+.gran{
+  width: 892px;
+}
+textarea{
+  border-radius: 10px;
+  height: 90px;
+  width: 300px;
+  border: 2px solid black;
+}
+form{
+  margin-left: 10px;
+}
+h2{
+  margin-left: 10px;
+}
+.crearproducto{
+  margin-left: 10px;
+  margin-top: 20px;
+}
+select{
+  border-radius: 5px;
+  height: 40px;
+  border: 2px solid black;
+}
+.guardar{
+  height: 35px;
+  border-radius: 7px;
+  margin-top: 60px;
+}
+.guardar:hover{
+  background-color: #2dda33;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+#nombre{
+  height: 35px;
+  margin-left: 1px;
+}
+#precio{
+  height: 35px;
+  margin-left: 1px;
+}
+#stock{
+  height: 35px;
+  margin-left: 1px;
+}
+.atras{
+  margin: 15px;
+  padding: 5px;
+  background-color: rgb(163, 236, 163);
+  border-radius: 4px;
+  border: 1px solid black;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+.atras:hover{
+  transform: scale(1.01);
+}

@@ -34,9 +34,9 @@
             <p class="parrafos">Contraseña:</p>
             <input type="password" placeholder="  Contraseña" name="password">
                 </br>
-        
+                        
             <button class="btn-iniciar"type="submit" name="enviar">Registrar</button>
-            <a href="<?=base_url?>/index.php">atras</a>
+            <a class ="atras" href="<?=base_url?>/index.php">Atrás</a>
         
           </form>
       
