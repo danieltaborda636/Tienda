@@ -10,14 +10,14 @@
 }
 
 .detalle-producto img {
-    width: 70%;
-    height: 55%;
+    width: 30%;
+    height: 45%;
     border-radius: 10px;
     margin-bottom: 15px;
 }
 
 .detalle-producto h2 {
-    margin-bottom: 10px;
+    margin-top: 0px;
     font-size: 24px;
     color: #333;
 }

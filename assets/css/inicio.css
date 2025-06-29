@@ -2,10 +2,14 @@
     font-size: 25px;
     color: black;
     text-decoration: none;
+    transition: transform 0.3s ease-in-out;
 }
-.text:hover{
+/* .text:hover{
     transition: transform 0.2s ease;
-}
+} */
+ .text:hover{
+    transition: transform 0.3s ease-in-out;
+ }
 .tex{
     font-size: 25px;
     color: rgb(5, 63, 252);
@@ -22,7 +26,7 @@
 }
 .granContenedor{
     position: relative;
-    width: 70%;
+    width: 892px;
     height:500px;
     background-color: rgb(255, 255, 255);
     border: 2px solid black;
@@ -30,7 +34,7 @@
     top: -450px;
 }
 .gran{
-     position: relative;
+    position: relative;
     width: 70%;
     height:500px;
     background-color: rgb(255, 255, 255);
@@ -41,7 +45,7 @@
 }
 
 .product-grid {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Aumenta el tamaño mínimo */
     gap: 20px;
     padding: 20px;
@@ -57,6 +61,7 @@
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.2s ease;
+    margin-right:45px;
 }
 
 .product-card:hover {
@@ -64,9 +69,12 @@
 }
 
 .product-card img {
-    max-width: 100%;
-    height: auto;
+    /* max-width: 200px;
+    height: auto; */
     margin-bottom: 10px;
+    border-radius: 5px;
+    height: 140px;
+    width: 200px;
 }
 
 .product-card h3 {
@@ -83,7 +91,4 @@
 }
 .btn:hover{
     transform: scale(1.05);
-}
-img{
-    border-radius: 5px;
 }
