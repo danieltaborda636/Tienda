@@ -23,11 +23,51 @@ if (isset($_GET['id'])) {
         <p><strong>Stock disponible:</strong> <?= intval($producto['stock']) ?> unidades</p>
 
         <?php if ($producto['stock'] > 0): ?>
-            <a href="?view=carrito&agregar=<?= $producto['id'] ?>" class="btn">Agregar al carrito</a>
+            <form action="/tienda_motos/Tienda/controllers/carritoController.php" method="get" id="form-carrito">
+                <input type="hidden" name="agregar" value="<?= $producto['id'] ?>">
+
+                <div id="contenedor-cantidad" style="display: none; margin-top: 10px;">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" name="cantidad" id="cantidad" value="1"
+                           min="1" max="<?= $producto['stock'] ?>" required>
+                </div>
+
+                <button type="button" class="btn" onclick="manejarAgregar()">Agregar al carrito</button>
+            </form>
         <?php else: ?>
             <p class="sin-stock">🚫 Producto agotado</p>
         <?php endif; ?>
     </div>
+
+    <script>
+    let cantidadVisible = false;
+
+    function manejarAgregar() {
+        const contenedorCantidad = document.getElementById("contenedor-cantidad");
+        const inputCantidad = document.getElementById("cantidad");
+        const max = parseInt(inputCantidad.max);
+
+        if (!cantidadVisible) {
+            contenedorCantidad.style.display = "block";
+            cantidadVisible = true;
+            inputCantidad.focus();
+            return;
+        }
+
+        const cantidad = parseInt(inputCantidad.value);
+        if (!cantidad || cantidad < 1) {
+            alert("Por favor ingresa una cantidad válida.");
+            return;
+        }
+
+        if (cantidad > max) {
+            alert("⚠️ No puedes agregar más del stock disponible (" + max + ").");
+            return;
+        }
+
+        document.getElementById("form-carrito").submit();
+    }
+    </script>
 
 <?php
     else:

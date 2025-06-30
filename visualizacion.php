@@ -40,7 +40,7 @@ include 'views/layouts/header.php';
             <li><a class="text" href="?view=register">Registrarse</a></li>
         <?php elseif ($_SESSION['usuario']['rol'] === 'admin'): ?>
             <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
-            <li><a class="text" href="./visualizacion.php">Ver carrito</a></li><br>
+            <a class="text" href="visualizacion.php">🛒 Ver carrito</a>
             <li><a class="text" href="#">Mis pedidos</a></li><br>
             <li><a class="text" href="#">Gestionar Pedidos</a></li><br>
             <li><a class="text" href="./visualizacion.php">Crear producto</a></li><br>
