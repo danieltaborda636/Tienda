@@ -1,0 +1,51 @@
+/* Style de ver carrito  */
+ .contenedorproducto{
+    width: 1201px;
+ }
+ .granContenedor{
+    position: relative;
+    width: 891px;
+    height:470px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    left: 322px;
+    top: -359px;
+}
+.contenedor{
+    position: relative;
+    width: 330px;
+    height:470px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    left: 68px;
+    top: 50px;
+}
+h2{
+    margin-left: 33%;
+}
+table{
+    height: 50%;
+    width: 65%;
+    border-radius: 10px;
+    margin-left: 15%;
+}
+td{
+    border-radius: 10px;
+}
+th{
+    border-radius: 10px;
+}
+a.vaciar_carrito{
+    text-decoration: none;
+    color: black;
+}
+.btn-vaciar{
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-left: 16%;
+}
+.btn-vaciar:hover{
+    transform: scale(1.05);
+    background-color: rgba(253, 50, 50, 0.603);
+}
