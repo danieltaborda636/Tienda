@@ -56,7 +56,7 @@ include 'views/layouts/header.php';
 $carrito = $_SESSION['carrito'] ?? [];
 ?>
 
-<h2>🛒 Carrito de Compras</h2>
+<h2 class="carrito_titulo">🛒 Carrito de Compras</h2>
 
 <?php if (empty($carrito)): ?>
     <p>Tu carrito está vacío.</p>
@@ -103,7 +103,7 @@ $carrito = $_SESSION['carrito'] ?? [];
         </tr>
     </table>
     <br>
-    <a href="/tienda_motos/Tienda/carrito" onclick="return confirm('¿Vaciar el carrito?')">🗑️ Vaciar carrito</a>
+    <a class="vaciar_carrito" href="/tienda_motos/Tienda/carrito" onclick="return confirm('¿Vaciar el carrito?')">🗑️ Vaciar carrito</a>
 <?php endif; ?>
 
 <script>

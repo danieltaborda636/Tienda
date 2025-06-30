@@ -2,6 +2,7 @@
 session_start();
 $carrito = $_SESSION['carrito'] ?? [];
 ?>
+<link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/carrito.css">
 
 <h2>🛒 Carrito de Compras</h2>
 
@@ -15,7 +16,7 @@ $carrito = $_SESSION['carrito'] ?? [];
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Subtotal</th>
-            <th>Acciones</th>
+            <!-- <th>Acciones</th> -->
         </tr>
         <?php
         $total = 0;
@@ -38,20 +39,22 @@ $carrito = $_SESSION['carrito'] ?? [];
                 </form>
             </td>
             <td>$<?= number_format($subtotal, 0, ',', '.') ?></td>
-            <td>
+            <!-- <td>
                 <a href="/tienda_motos/Tienda/controllers/carritoController.php?eliminar=<?= $item['id'] ?>">❌</a>
-            </td>
+            </td> -->
         </tr>
         <?php endforeach; ?>
         <tr>
             <td colspan="4" align="right"><strong>Total:</strong></td>
             <td><strong>$<?= number_format($total, 0, ',', '.') ?></strong></td>
-            <td></td>
+            <!-- <td></td> -->
         </tr>
     </table>
     <br>
-    <a href="/tienda_motos/Tienda/controllers/carritoController.php?vaciar=1" onclick="return confirm('¿Vaciar el carrito?')">🗑️ Vaciar carrito</a>
-<?php endif; ?>
+    <button class="btn-vaciar">
+        <a class="vaciar_carrito"href="/tienda_motos/Tienda/controllers/carritoController.php?vaciar=1" onclick="return confirm('¿Vaciar el carrito?')">🗑️ Vaciar carrito</a>
+    </button>
+    <?php endif; ?>
 
 <script>
 // Activa edición por fila

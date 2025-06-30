@@ -168,3 +168,6 @@ select{
 .atras:hover{
   transform: scale(1.01);
 }
+.carrito_titulo{
+  margin-left: 50%;
+}
