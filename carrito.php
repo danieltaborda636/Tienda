@@ -89,6 +89,7 @@ $carrito = $_SESSION['carrito'] ?? [];
                            class="cantidad-input" id="cantidad-input-<?= $item['id'] ?>" style="display:none;">
                     <button type="button" onclick="activarEdicion(<?= $item['id'] ?>)">✏️</button>
                     <button type="submit" class="btn-guardar" id="guardar-btn-<?= $item['id'] ?>" style="display:none;">✅</button>
+
                 </form>
             </td>
             <td>$<?= number_format($subtotal, 0, ',', '.') ?></td>
@@ -104,8 +105,13 @@ $carrito = $_SESSION['carrito'] ?? [];
         </tr>
     </table>
     <br>
+    
     <button class="btn-vaciar">
         <a class="vaciar_carrito" href="/tienda_motos/Tienda/carrito" onclick="return confirm('¿Vaciar el carrito?')">🗑️ Vaciar carrito</a>
+    </button>
+    
+    <button class="btn-pedido">
+        <a class="hacer_carrito" href="/tienda_motos/Tienda/hacerPedido.php" onclick="return confirm('¿Deseas hacer el pedido?')">hacer pedido</a>
     </button>
     <?php endif; ?>
 
