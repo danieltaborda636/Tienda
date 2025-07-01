@@ -26,7 +26,7 @@ if (isset($_GET['controller']) && isset($_GET['action'])) {
 // ===============================================================
 
 include 'config/database.php';
-include 'views/layouts/header.php';
+
 include 'config/parametros.php';
 ?>
 
@@ -36,7 +36,6 @@ include 'config/parametros.php';
     <ul>
         <?php if (!isset($_SESSION['usuario'])): ?>
             <li><a class="text" href="?view=login">Iniciar sesión</a></li><br>
-            <li><a class="text" href="?view=register">Registrarse</a></li>
 
         <?php elseif ($_SESSION['usuario']['rol'] === 'admin'): ?>
             <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
@@ -55,23 +54,7 @@ include 'config/parametros.php';
         <?php endif; ?>
     </ul>
 
-    <?php
-    if (isset($_GET['view'])) {
-        $vista = $_GET['view'];
-
-        if (isset($_SESSION['usuario']) && ($vista === 'login' || $vista === 'register')) {
-            echo "<p>Ya estás logueado.</p>";
-        } else {
-            if ($vista === "register") {
-                include 'views/user/register.php';
-            } elseif ($vista === "login") {
-                include 'views/user/login.php';
-            } elseif ($vista === "categoria") {
-                include 'views/user/categoria.php';
-            }
-        }
-    }
-    ?>
+   
 </div>
 
 <div class="granContenedor">

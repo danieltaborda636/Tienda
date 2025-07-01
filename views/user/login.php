@@ -1,6 +1,10 @@
-
+<div>
+<?php 
+include '../layouts/header.php';
+include '../../config/parametros.php';
+?>
 <title>Iniciar Sesión</title>
-<link rel="stylesheet" href="<?= base_url ?>/assets/css/style.css">
+<link rel="stylesheet" href="<?= base_url ?>/assets/css/login.css">
 
 <div class="container">
     <h1>Iniciar sesión</h1>
@@ -24,5 +28,10 @@
         <button class="btn-atras" onclick="location.href='index.php'">Atrás</button>
     </form>
 
+</div>
+
+<?php 
+include '../layouts/footer.php'
+?>
 </div>
 
