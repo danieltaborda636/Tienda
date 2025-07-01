@@ -1,4 +1,4 @@
-<div>
+<div class="contenedorTodo">
 <?php
 session_start();
 include 'views/layouts/header.php';

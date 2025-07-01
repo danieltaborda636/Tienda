@@ -70,7 +70,6 @@
     transition: transform 0.2s ease;
     margin-right:45px;
 }
-
 .product-card:hover {
     transform: scale(1.05);
 }

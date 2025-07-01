@@ -6,9 +6,8 @@ include '../../config/parametros.php';
 <title>Iniciar Sesión</title>
 <link rel="stylesheet" href="<?= base_url ?>/assets/css/login.css">
 
-<div class="container">
+<div class="containerLogin">
     <h1>Iniciar sesión</h1>
-
     <?php if (isset($_GET['login'])): ?>
         <div class="mensaje">
             <?php if ($_GET['login'] == 'error'): ?>
