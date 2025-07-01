@@ -22,6 +22,7 @@ $categorias = mysqli_query($conexion, $sql);
             <a class="nombre" href="index.php">VCJ MOTOS</a>
         </div>
 
+        <div class="container">
         <nav class="menu">
             <ul>
                 <li><a href="index.php">Inicio</a></li>
@@ -39,6 +40,7 @@ $categorias = mysqli_query($conexion, $sql);
                 <?php endif; ?>
             </ul>
         </nav>
+        </div>
 
         <div class="clearfix"></div>
     </header>
