@@ -36,7 +36,7 @@ if (isset($_GET['agregar'])) {
         }
     }
 
-    header('Location: ../views/carrito/ver.php');
+    header('Location: ../carrito.php');
     exit;
 }
 
@@ -44,14 +44,14 @@ if (isset($_GET['agregar'])) {
 if (isset($_GET['eliminar'])) {
     $id = intval($_GET['eliminar']);
     unset($_SESSION['carrito'][$id]);
-    header('Location: ../views/carrito/ver.php');
+    header('Location: ../carrito.php');
     exit;
 }
 
 // Vaciar carrito
 if (isset($_GET['vaciar'])) {
     unset($_SESSION['carrito']);
-    header('Location: ../views/carrito/ver.php');
+    header('Location: ../carrito.php');
     exit;
 }
 
@@ -73,6 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['actualizar'])) {
         }
     }
 
-    header('Location: ../views/carrito/ver.php');
+    header('Location: ../carrito.php');
     exit;
 }

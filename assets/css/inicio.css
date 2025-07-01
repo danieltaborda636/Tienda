@@ -26,12 +26,13 @@
 }
 .granContenedor{
     position: relative;
-    width: 892px;
-    height:500px;
+    width: 78%;
+    height:auto;
     background-color: rgb(255, 255, 255);
     border: 2px solid black;
     left: 376px;
     top: -450px;
+    padding: 10px;
 }
 .gran{
     position: relative;
@@ -50,6 +51,7 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Aumenta el tamaño mínimo */
     gap: 20px;
     padding: 20px;
+    
     justify-items: center; /* Centra las cards dentro del grid */
 }
 

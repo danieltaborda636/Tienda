@@ -1,82 +1,11 @@
 <?php
 session_start();
-
-// ============ ENRUTADOR MVC PARA controller & action ============
-if (isset($_GET['controller']) && isset($_GET['action'])) {
-    $controller = $_GET['controller'];
-    $action = $_GET['action'];
-
-    $nombreClase = 'Controlador' . ucfirst($controller);
-    $rutaControlador = 'controllers/' . $nombreClase . '.php';
-
-    if (file_exists($rutaControlador)) {
-        require_once $rutaControlador;
-        $controlador = new $nombreClase();
-
-        if (method_exists($controlador, $action)) {
-            call_user_func([$controlador, $action]);
-            exit;
-        } else {
-            die("❌ La acción '$action' no existe en el controlador '$nombreClase'.");
-        }
-    } else {
-        die("❌ El controlador '$nombreClase' no existe.");
-    }
-}
-// ===============================================================
-
-include 'config/database.php';
 include 'config/parametros.php';
 include 'views/layouts/header.php';
 ?>
+<link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/crear_producto.css">
+<div class="crear_producto">
 
-<link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/inicio.css">
-<link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/style.css">
-
-<div class="contenedor">
-    <ul>
-        <?php if (!isset($_SESSION['usuario'])): ?>
-            <li><a class="text" href="?view=login">Iniciar sesión</a></li><br>
-            <li><a class="text" href="?view=register">Registrarse</a></li>
-        <?php elseif ($_SESSION['usuario']['rol'] === 'admin'): ?>
-            <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
-            <a class="text" href="visualizacion.php">🛒 Ver carrito</a>
-            <li><a class="text" href="#">Mis pedidos</a></li><br>
-            <li><a class="text" href="#">Gestionar Pedidos</a></li><br>
-            <li><a class="text" href="./visualizacion.php">Crear producto</a></li><br>
-            <li><a class="text" href="?view=categoria">Crear categoría</a></li><br>
-            <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>
-        <?php else: ?>
-            <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
-            <li><a class="text" href="#">Mis pedidos</a></li>
-            <li><a class="text" href="#">Ver carrito</a></li>
-            <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>
-        <?php endif; ?>
-    </ul>
-
-    <?php
-    if (isset($_GET['view'])) {
-        $vista = $_GET['view'];
-
-        // Si ya está logueado, no mostrar login/register
-        if (isset($_SESSION['usuario']) && ($vista === 'login' || $vista === 'register')) {
-            echo "<p>Ya estás logueado.</p>";
-        } else {
-            if ($vista === "register") {
-                include 'views/user/register.php';
-            } elseif ($vista === "login") {
-                include 'views/user/login.php';
-            } elseif ($vista === "categoria") {
-                include 'views/user/categoria.php';
-            } elseif ($vista === "producto" && isset($_GET['id'])) {
-                include 'views/user/producto.php';
-            }
-        }
-    }
-    ?>
-</div>
-
-<div class="gran">
 <?php if (isset($_GET['mensaje'])): ?>
     <div style="padding:10px; margin-bottom:15px; border-radius:5px;">
         <?php
