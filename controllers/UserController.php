@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
         header("Location: ../index.php");
         exit;
     } else {
-        header("Location: ../index.php?view=login&login=error");
+        header("Location: ./../views/user/login.php?view=login&login=error");
         exit;
     }
 }
@@ -28,20 +28,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enviar'])) {
     $password  = trim($_POST["password"]);
 
     if (empty($Nombre) || empty($Apellidos) || empty($email) || empty($password)) {
-        header("Location: ../index.php?view=register&registro=campos_invalidos");
+        header("Location: ./../views/user/registro.php?view=register&registro=campos_invalidos");
         exit;
     } else {
         $user = new user();
         $registrado = $user->registrar($Nombre, $Apellidos, $email, $password);
 
         if ($registrado === true) {
-            header("Location: ../index.php?view=register&registro=exito");
+            header("Location: ./../views/user/registro.php?view=register&registro=exito");
             exit;
         } elseif ($registrado === "duplicado") {
-            header("Location: ../index.php?view=register&registro=duplicado");
+            header("Location: ./../views/user/registro.php?view=register&registro=duplicado");
             exit;
         } else {
-            header("Location: ../index.php?view=register&registro=error");
+            header("Location: ./../views/user/registro.php?view=register&registro=error");
             exit;
         }
 

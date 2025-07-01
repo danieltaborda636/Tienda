@@ -1,16 +1,16 @@
-
+<div>
+<?php 
+include '../layouts/header.php';
+include '../../config/parametros.php';
+?>
+    </br>
     <title>Registro</title>
-    <link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/style.css">
-    <div class="container">
-  
-          <h1 class="titulos">Registrate</h1>
-          
-
-         <?php if (isset($_GET['registro'])): ?>
+    <link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/registrar.css">
+    <?php if (isset($_GET['registro'])): ?>
           <div class="mensaje">
               <?php if ($_GET['registro'] == 'exito'): ?>
                   <p class="mensaje-exito">Registro exitoso</p>
-                  <?php header("refresh: 2; URL=./index.php"); ?>
+                  <?php header("refresh: 2; URL= ./../user/login.php"); ?>
               <?php elseif ($_GET['registro'] == 'error'): ?>
                   <p class="mensaje-error">Error al registrar</p>
                    <?php elseif ($_GET['registro'] == 'duplicado'): ?>
@@ -22,8 +22,8 @@
     
           </div>
           <?php endif; ?>
-
-
+    <div class="container">
+          <h1 class="titulos">Registrate</h1>
           <form action="<?= base_url ?>/controllers/UserController.php" method="POST">
             <p class="parrafos">Nombre:</p></br>
             <input type="text" placeholder="  Nombre completo" name="Nombre">
@@ -33,16 +33,12 @@
             <input type="email"placeholder=" Gmail"  name="email">
             <p class="parrafos">Contraseña:</p>
             <input type="password" placeholder="  Contraseña" name="password">
-                </br>
-                        
+            </br>
             <button class="btn-iniciar"type="submit" name="enviar">Registrar</button>
             <a class ="atras" href="<?=base_url?>/index.php">Atrás</a>
-        
           </form>
-      
-
     </div>
-
-
-
-
+<?php 
+include '../layouts/footer.php'
+?>
+</div>

@@ -1,6 +1,10 @@
-
+<div>
+<?php 
+include '../layouts/header.php';
+include '../../config/parametros.php';
+?>
 <title>Iniciar Sesión</title>
-<link rel="stylesheet" href="<?= base_url ?>/assets/css/style.css">
+<link rel="stylesheet" href="<?= base_url ?>/assets/css/login.css">
 
 <div class="container">
     <h1>Iniciar sesión</h1>
@@ -21,8 +25,13 @@
         <input type="password" name="password" placeholder="Contraseña" required>
 
         <button class="btn-iniciar" type="submit" name="login">Iniciar sesión</button><br>
-        <button class="btn-atras" onclick="location.href='index.php'">Atrás</button>
+        <button class="btn-atras" onclick="location.href='<?=base_url?>/index.php'">Atrás</button>
     </form>
 
+</div>
+
+<?php 
+include '../layouts/footer.php'
+?>
 </div>
 

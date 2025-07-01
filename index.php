@@ -1,50 +1,25 @@
+<div>
 <?php
 session_start();
-
-// ============ ENRUTADOR MVC PARA controller & action ============
-if (isset($_GET['controller']) && isset($_GET['action'])) {
-    $controller = $_GET['controller'];
-    $action = $_GET['action'];
-
-    $nombreClase = 'Controlador' . ucfirst($controller);
-    $rutaControlador = 'controllers/' . $nombreClase . '.php';
-
-    if (file_exists($rutaControlador)) {
-        require_once $rutaControlador;
-        $controlador = new $nombreClase();
-
-        if (method_exists($controlador, $action)) {
-            call_user_func([$controlador, $action]);
-            exit;
-        } else {
-            die("❌ La acción '$action' no existe en el controlador '$nombreClase'.");
-        }
-    } else {
-        die("❌ El controlador '$nombreClase' no existe.");
-    }
-}
-// ===============================================================
-
-include 'config/database.php';
 include 'views/layouts/header.php';
 include 'config/parametros.php';
 ?>
-
 <link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/inicio.css">
 
 <div class="contenedor">
     <ul>
         <?php if (!isset($_SESSION['usuario'])): ?>
-            <li><a class="text" href="?view=login">Iniciar sesión</a></li><br>
-            <li><a class="text" href="?view=register">Registrarse</a></li>
+            <li><a class="text" href="views/user/login.php">Iniciar sesión</a></li><br>
+            <li><a class="text" href="views/user/registro.php">registrarse</a></li><br>
+
 
         <?php elseif ($_SESSION['usuario']['rol'] === 'admin'): ?>
             <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
             <li><a class="text" href="./carrito.php">Ver carrito</a></li><br>
             <li><a class="text" href="#">Mis pedidos</a></li><br>
             <li><a class="text" href="#">Gestionar Pedidos</a></li><br>
-            <li><a class="text" href="./visualizacion.php">Crear producto</a></li><br>
-            <li><a class="text" href="?view=categoria">Crear categoría</a></li><br>
+            <li><a class="text" href="./crear_producto.php">Crear producto</a></li><br>
+            <li><a class="text" href="views/user/categoria.php">Crear categoría</a></li><br>
             <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>
 
         <?php else: ?>
@@ -55,23 +30,7 @@ include 'config/parametros.php';
         <?php endif; ?>
     </ul>
 
-    <?php
-    if (isset($_GET['view'])) {
-        $vista = $_GET['view'];
-
-        if (isset($_SESSION['usuario']) && ($vista === 'login' || $vista === 'register')) {
-            echo "<p>Ya estás logueado.</p>";
-        } else {
-            if ($vista === "register") {
-                include 'views/user/register.php';
-            } elseif ($vista === "login") {
-                include 'views/user/login.php';
-            } elseif ($vista === "categoria") {
-                include 'views/user/categoria.php';
-            }
-        }
-    }
-    ?>
+   
 </div>
 
 <div class="granContenedor">
@@ -97,3 +56,5 @@ include 'config/parametros.php';
 </div>
 
 <?php include 'views/layouts/footer.php'; ?>
+
+</div>
