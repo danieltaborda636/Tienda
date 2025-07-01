@@ -20,18 +20,21 @@
     width: 320px;
     height:500px;
     background-color: rgb(255, 255, 255);
-    border: 2px solid black;
-    left: 67px;
-    top: 50px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    left: 0;
+    top: 35px;
 }
 .granContenedor{
     position: relative;
-    width: 67%;
+    width: 76%;
     height:auto;
     background-color: rgb(255, 255, 255);
     border: 2px solid black;
-    left: 376px;
-    top: -450px;
+    left: 320px;
+    /* top: -450px; */
+    bottom: 465px;
     padding: 10px;
 }
 .gran{
