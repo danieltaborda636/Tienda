@@ -25,7 +25,7 @@ include '../../config/parametros.php';
         <input type="password" name="password" placeholder="Contraseña" required>
 
         <button class="btn-iniciar" type="submit" name="login">Iniciar sesión</button><br>
-        <button class="btn-atras" onclick="location.href='index.php'">Atrás</button>
+        <button class="btn-atras" onclick="location.href='<?=base_url?>/index.php'">Atrás</button>
     </form>
 
 </div>
