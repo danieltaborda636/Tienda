@@ -10,7 +10,7 @@ include 'config/parametros.php';
     <ul>
         <?php if (!isset($_SESSION['usuario'])): ?>
             <li><a class="text" href="views/user/login.php">Iniciar sesión</a></li><br>
-            <li><a class="text" href="views/user/registro.php">registrarse</a></li><br>
+            <li><a class="text" href="views/user/registro.php">Registrarse</a></li><br>
 
 
         <?php elseif ($_SESSION['usuario']['rol'] === 'admin'): ?>

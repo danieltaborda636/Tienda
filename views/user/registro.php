@@ -14,7 +14,7 @@ include '../../config/parametros.php';
               <?php elseif ($_GET['registro'] == 'error'): ?>
                   <p class="mensaje-error">Error al registrar</p>
                    <?php elseif ($_GET['registro'] == 'duplicado'): ?>
-            <p class="mensaje-error">El correo ya está registrado</p>
+            <p class="mensaje-error">El correo ya está registrado.</p>
               <?php endif; ?>
                 <?php if ($_GET['registro'] == 'campos_invalidos'): ?>
                   <p class="mensaje-campos">Por favor, completa todos los campos.</p>
