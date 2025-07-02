@@ -5,7 +5,7 @@ include '../../config/parametros.php';
 ?>
 <title>Iniciar Sesión</title>
 <link rel="stylesheet" href="<?= base_url ?>/assets/css/login.css">
-
+<div class="Todo">
 <div class="containerLogin">
     <h1>Iniciar sesión</h1>
     <?php if (isset($_GET['login'])): ?>
@@ -15,7 +15,6 @@ include '../../config/parametros.php';
             <?php endif; ?>
         </div>
     <?php endif; ?>
-
     <form action="<?= base_url ?>/controllers/UserController.php" method="POST">
         <p class="parrafos">Correo electrónico:</p>
         <input type="email" name="email" placeholder="Gmail" required>
@@ -26,8 +25,12 @@ include '../../config/parametros.php';
         <button class="btn-iniciar" type="submit" name="login">Iniciar sesión</button><br>
         <button class="btn-atras" onclick="location.href='<?=base_url?>/index.php'">Atrás</button>
     </form>
-
 </div>
+<!-- <div class="imagen"> -->
+    <img src="../../assets/img/logo_moto.jpeg" alt="">
+<!-- </div> -->
+</div>
+
 
 <?php 
 include '../layouts/footer.php'
