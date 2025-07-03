@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <title>Hacer Pedido</title>
 
+
 </head>
 <body>
     <form class="formulario" method="POST" action="">
