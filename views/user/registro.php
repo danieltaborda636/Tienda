@@ -1,11 +1,11 @@
-<div>
+<div class="Todo">
 <?php 
 include '../layouts/header.php';
 include '../../config/parametros.php';
 ?>
-    </br>
+    <br><br>
     <title>Registro</title>
-    <link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/registrar.css">
+    <link rel="stylesheet" href="/tienda_motos/tienda/assets/css/registrar.css">
     <?php if (isset($_GET['registro'])): ?>
           <div class="mensaje">
               <?php if ($_GET['registro'] == 'exito'): ?>
@@ -22,7 +22,9 @@ include '../../config/parametros.php';
     
           </div>
           <?php endif; ?>
-    <div class="container">
+          <div class="formulario">
+        <img class="imagen-moto" src="../../assets/img/R11.jpeg" alt="">
+        
           <h1 class="titulos">Registrate</h1>
           <form action="<?= base_url ?>/controllers/UserController.php" method="POST">
             <p class="parrafos">Nombre:</p></br>
@@ -33,9 +35,13 @@ include '../../config/parametros.php';
             <input type="email"placeholder=" Gmail"  name="email">
             <p class="parrafos">Contraseña:</p>
             <input type="password" placeholder="  Contraseña" name="password">
-            </br>
-            <button class="btn-iniciar"type="submit" name="enviar">Registrar</button>
-            <a class ="atras" href="<?=base_url?>/index.php">Atrás</a>
+            </br><br>
+            <button class="btn-registrar"type="submit" name="enviar">Registrar</button>
+            <button class ="btn-atras" href="<?=base_url?>/index.php">Atrás</button>
+            <!-- <button><a href="index.php"></a>Atras</button> -->
+            <!-- <button type="button" onclick="window.location.href='../../../index.php'">Atrás</button> -->
+          
+             
           </form>
     </div>
 <?php 

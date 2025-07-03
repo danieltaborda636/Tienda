@@ -1,4 +1,4 @@
-.text{
+a.text{
     font-size: 25px;
     color: black;
     text-decoration: none;
@@ -7,8 +7,8 @@
 /* .text:hover{
     transition: transform 0.2s ease;
 } */
- .text:hover{
-    transition: transform 0.3s ease-in-out;
+a.text:hover{
+    transform: scale(1.2);
  }
 .tex{
     font-size: 25px;

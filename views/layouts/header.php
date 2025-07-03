@@ -14,7 +14,7 @@ $categorias = mysqli_query($conexion, $sql);
 <head>
     <meta charset="utf-8"/>
     <title>VCJ MOTOS</title>
-    <link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/header.css">
+    <link rel="stylesheet" href="/tienda_motos/Tienda/assets/css/header.css">
 </head>
 <body>
     <header id="cabecera">

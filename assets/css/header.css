@@ -11,8 +11,9 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid black;
+    /* background-color: rgb(255, 255, 255); */
+    background-color: #505050;
+    /* border: 2px solid black; */
 
 }
 
@@ -22,7 +23,7 @@
     left: 50%;
     transform: translate(-50%, -50%); /* ✅ Centrado exacto */
     font-size: 60px;
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 .menu{
@@ -32,15 +33,17 @@
     width: 100%;
     height: 35px;
     background-color: rgb(255, 255, 255);
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+    /* border-left: 2px solid black;
+    border-right: 2px solid black; */
     /* border-bottom: 2px solid black; */
 }
 .menu ul {
+    color: #ffffff;
+    background-color: #505050;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    padding: 0;
+    /* padding: 0; */
     margin: 0 auto;
     gap: 10px;
     justify-content: center; /* inicia centrado */
@@ -48,7 +51,7 @@
 }
 .menu li {
     position: relative;
-    padding: 0 15px;
+    padding:  3 15px;
 }
 
 /* Agrega la barra | después de cada <li> excepto el último */
@@ -58,7 +61,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    color: #000000; /* o el color que desees para el separador */
+    color: #ffffff; /* o el color que desees para el separador */
 }
 
 /* Quita el separador del último <li> */
@@ -78,7 +81,7 @@
   padding: 5px;
   line-height: normal;
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   transition: all 0.3s ease;
   border-bottom: 2px solid transparent;
   font-size: 15px;

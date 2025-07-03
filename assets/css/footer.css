@@ -5,8 +5,9 @@
     left: 7px;
     right: 7px;
     height: 35px;
-    background-color: rgb(255, 255, 255);
-    border: 2px solid black;
+    /* background-color: rgb(255, 255, 255); */
+    background-color: #505050;
+    /* border: 2px solid black; */
     right: 2px;
 }
 .parrafo{
@@ -15,6 +16,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
