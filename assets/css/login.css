@@ -2,14 +2,17 @@
     bottom: 2rem;
     position:relative;
     width: 100%;
-    height: 10%;
+    height: 100%;
     background-color: rgb(255, 255, 255);
     margin-top: 4rem;
     border-left: 2px solid black;
     border-right: 2px solid black;
     border-top: 2px solid black;
     padding: 0;
-
+}
+.cont{
+    border-left: 2px solid black;
+    border-right: 2px solid black;
 }
 body{
     margin: 3px;
@@ -23,12 +26,38 @@ h1{
 }
 img{
     width: 42rem;
-    height: 28rem;
+    height: 30rem;
     float: right;
-    margin-top: -70px;
-    /* margin-bottom: -60px; */
     margin-right: 3px;
+    /* margin-top: 30px; */
 }
-/* .imagen{
-    position: relative;
-} */
+input{
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+}
+input:hover{
+        transform: scale(1.02);
+
+}
+.btn-iniciar{
+    border-radius: 5px;
+    height: 30px;
+    background: #fffdfd;
+}
+.btn-iniciar:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background: #24242436;
+
+}
+.btn-atras{
+    border-radius: 5px;
+    height: 30px;
+    background: #fffdfd;
+}
+.btn-atras:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background: #24242436;
+}
