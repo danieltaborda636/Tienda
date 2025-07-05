@@ -12,7 +12,7 @@
     width: 100%;
     height: 100%;
     /* background-color: rgb(255, 255, 255); */
-    background-color: #505050;
+    background-color: #17181A;
     /* border: 2px solid black; */
 
 }
@@ -39,7 +39,8 @@
 }
 .menu ul {
     color: #ffffff;
-    background-color: #505050;
+    /* background-color: #505050; */
+    background-color: #17181A;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
