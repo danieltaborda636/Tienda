@@ -1,11 +1,11 @@
 body{
-    background-color: #17181A;
+    background-color: #1a1a1a;
 
 }
 a.text{
     font-size: 25px;
-    /* color: rgb(255, 255, 255); */
-    color: black;
+    color: rgb(255, 255, 255);
+    /* color: black; */
     text-decoration: none;
     /* transition: transform 0.3s ease-in-out; */
 }
@@ -22,12 +22,11 @@ a.text{
     width: 320px;
     height:500px;
     /* background-color: rgb(255, 255, 255); */
-    /* background-color: #17181A; */
-    /* background-color: #121212; */
-    background-color: #b1b0b0;
+    background-color: #1a1a1a;
+    /* background-color: #b1b0b0;
     border-bottom: 2px solid black;
-    border-left: 2px solid black;
-    border-top: 2px solid #17181A;
+    border-left: 2px solid black; */
+    /* border-top: 2px solid #17181A; */
     left: 0;
     top: 35px;
 }
@@ -36,8 +35,8 @@ a.text{
     width: 76%;
     height:auto;
     /* background-color: rgb(255, 255, 255); */
-    background-color: #b1b0b0;
-    /* background-color: #121212; */
+    /* background-color: #b1b0b0; */
+    background-color: #1a1a1a;
     left: 320px;
     /* top: -450px; */
     bottom: 463px;
@@ -67,11 +66,11 @@ a.text{
 .product-card {
     width: 280px;
     height: 300px;
-    color: white;
+    /* color: white; */
     /* background: #fff; */
-    /* background: #141414; */
+    background: #17181a;
     /* background: #1e1e1e; */
-    background: #2c2c2c;
+    /* background: #2c2c2c; */
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
