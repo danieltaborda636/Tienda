@@ -40,7 +40,8 @@
 .menu ul {
     color: #ffffff;
     /* background-color: #505050; */
-    background-color: #17181A;
+    /* background-color: #17181A; */
+    background-color: #1a1a1a;
     display: flex;
     flex-wrap: wrap;
     list-style: none;

@@ -1,9 +1,12 @@
 body{
     background-color: #c0c0c0;
+    /* background-color: #17181A; */
+
 }
 form{
     top: 0;
     background-color: #c0c0c0;
+    /* background-color: #17181A; */
     position:static;
     width: 30%;
     /* background-color: #c0c0c0; */

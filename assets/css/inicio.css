@@ -1,9 +1,15 @@
+body{
+    background-color: #17181A;
+
+}
 a.text{
     font-size: 25px;
-    color: rgb(255, 255, 255);
+    /* color: rgb(255, 255, 255); */
+    color: black;
     text-decoration: none;
-    transition: transform 0.3s ease-in-out;
+    /* transition: transform 0.3s ease-in-out; */
 }
+
 
 
 .tex{
@@ -16,7 +22,9 @@ a.text{
     width: 320px;
     height:500px;
     /* background-color: rgb(255, 255, 255); */
-    background-color: #17181A;
+    /* background-color: #17181A; */
+    /* background-color: #121212; */
+    background-color: #b1b0b0;
     border-bottom: 2px solid black;
     border-left: 2px solid black;
     border-top: 2px solid #17181A;
@@ -28,11 +36,11 @@ a.text{
     width: 76%;
     height:auto;
     /* background-color: rgb(255, 255, 255); */
-    background-color: #17181A;
-    /* border: 2px solid black; */
+    background-color: #b1b0b0;
+    /* background-color: #121212; */
     left: 320px;
     /* top: -450px; */
-    bottom: 465px;
+    bottom: 463px;
     padding: 10px;
 }
 .gran{
@@ -61,7 +69,9 @@ a.text{
     height: 300px;
     color: white;
     /* background: #fff; */
-    background: #141414;
+    /* background: #141414; */
+    /* background: #1e1e1e; */
+    background: #2c2c2c;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
@@ -92,8 +102,8 @@ a.text{
 .btn {
     display: inline-block;
     padding: 8px 15px;
-    /* background: #007bff; */
-    background: #C01920;
+    background: #007bff;
+    /* background: #C01920; */
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
