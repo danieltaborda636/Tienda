@@ -69,7 +69,8 @@ body{
     border-radius: 8px;
     margin-top: 30px;
     /* background-color: #cececeaf; */
-    background-color: rgba(0, 60, 255, 0.726);
+    /* background-color: rgba(0, 60, 255, 0.726); */
+    background-color: rgb(93, 131, 255);
     color: white;
 }
 .guardar:hover{

@@ -1,0 +1,35 @@
+*{
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('../img/m1000r.jpeg');
+    background-color: #c0c0c0;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center bottom 34%;
+    background-attachment: scroll;
+}
+.contenedor{
+    margin-top: 100px;
+    margin-left: 15%;
+}
+input{
+    height: 30px;
+    border-radius: 10px;
+    background-color: #c0c0c054;
+}
+input:hover{
+    transform: scale(1.05);
+}
+button{
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(93, 131, 255);
+    color: white;
+}
+button:hover{
+    background-color: rgba(0, 43, 184, 0.699);
+    cursor: pointer;
+    transform: scale(1.05);
+}
