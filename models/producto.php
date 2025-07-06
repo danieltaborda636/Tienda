@@ -1,40 +1,44 @@
 <?php
-// Esta clase sirve para manejar los productos de la tienda de motos (guardar y consultar)
-class producto {
-    // Esta variable guarda la conexión con la base de datos
-    private $db;
+// Esta clase maneja la lógica relacionada con los productos
+class Producto {
+    private $db; // Conexión a la base de datos
 
-    // Cuando se crea un producto cuando usamos new producto(), se conecta a la base de datos
+    // Al crear una instancia de Producto, se conecta a la base de datos
     public function __construct() {
-        // Aquí usamos la clase Database que ya tenemos para conectarnos
+        require_once '../config/database.php'; // Asegúrate de que esta ruta sea correcta
         $this->db = Database::connect();
     }
 
-    // Esta función guarda un producto nuevo en la base de datos
+    // Guarda un nuevo producto en la base de datos
     public function crear($categoria_id, $nombre, $descripcion, $precio, $stock, $oferta, $fecha, $imagen) {
-        // Escribimos el INSERT para meter los datos en la tabla productos
         $sql = "INSERT INTO productos (categoria_id, nombre, descripcion, precio, stock, oferta, fecha, imagen)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        // Preparamos la consulta (esto hace que sea más segura)
         $stmt = $this->db->prepare($sql);
 
-        // Aquí pasamos los datos reales al SQL (los que vienen del formulario)
-        $stmt->bind_param("isssdsss", $categoria_id, $nombre, $descripcion, $precio, $stock, $oferta, $fecha, $imagen);
+        // Revisamos si se preparó correctamente
+        if (!$stmt) {
+            return false;
+        }
 
-        // Ejecutamos la consulta. Si se guarda bien, devuelve true.
-        return $stmt->execute();
+        // Convertimos tipos si es necesario
+        $oferta = (string)$oferta;
+        $fecha = (string)$fecha;
+
+        // Enlazamos los parámetros. Tipos:
+        // i = integer (categoria_id, stock)
+        // d = double (precio)
+        // s = string (nombre, descripcion, oferta, fecha, imagen)
+        $stmt->bind_param("issdisss", $categoria_id, $nombre, $descripcion, $precio, $stock, $oferta, $fecha, $imagen);
+
+        return $stmt->execute(); // Ejecutamos y retornamos el resultado (true o false)
     }
 
-    // Esta función trae todos los productos que hay en la base de datos
+    // Devuelve todos los productos de la base de datos
     public function obtenerTodos() {
-        // SQL para traer todo lo que hay en la tabla productos, ordenado del más nuevo al más viejo
         $sql = "SELECT * FROM productos ORDER BY id DESC";
-
-        // Ejecutamos esa consulta
-        $resultado = $this->db->query($sql);
-
-        // Devolvemos el resultado para que se pueda usar con un while y mostrarlos
-        return $resultado;
+        return $this->db->query($sql);
     }
+
+    // Puedes agregar más métodos luego (editar, eliminar, buscar por ID, etc.)
 }

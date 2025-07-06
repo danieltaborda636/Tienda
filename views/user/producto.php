@@ -8,14 +8,14 @@ if (isset($_GET['id'])) {
 
     if ($producto):
 ?>
-    <!-- Vincula el CSS para estilos del producto -->
     <link rel="stylesheet" href="/tienda_motos/Tienda/assets/css/producto.css">
 
     <div class="detalle-producto">
         <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
         
-        <img src="archivos-subidos/productos/<?= htmlspecialchars($producto['imagen']) ?>" 
-             alt="<?= htmlspecialchars($producto['nombre']) ?>">
+        <img src="/tienda_motos/Tienda/uploads/productos/<?= htmlspecialchars($producto['imagen']) ?>" 
+             alt="<?= htmlspecialchars($producto['nombre']) ?>" 
+             onerror="this.onerror=null; this.src='/tienda_motos/Tienda/assets/img/no-image.png';">
 
         <p><?= nl2br(htmlspecialchars($producto['descripcion'])) ?></p>
         <p><strong>Precio:</strong> $<?= number_format($producto['precio'], 0, ',', '.') ?></p>

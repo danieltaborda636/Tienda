@@ -1,24 +1,17 @@
 <?php
 class Database {
-    private static $conexion = null;
-
     public static function connect() {
-        if (self::$conexion === null) {
-            $host = 'localhost';
-            $usuario = 'root';
-            $contrasena = '';
-            $nombreBD = 'tienda_sena';
+        if (!defined('DB_SERVIDOR')) define('DB_SERVIDOR', 'localhost');
+        if (!defined('DB_USUARIO')) define('DB_USUARIO', 'root');
+        if (!defined('DB_CONTRASENA')) define('DB_CONTRASENA', '');
+        if (!defined('DB_NOMBRE')) define('DB_NOMBRE', 'tienda_sena');
 
-            self::$conexion = new mysqli($host, $usuario, $contrasena, $nombreBD);
+        $conexion = mysqli_connect(DB_SERVIDOR, DB_USUARIO, DB_CONTRASENA , DB_NOMBRE);
 
-            if (self::$conexion->connect_error) {
-                die("Error de conexión: " . self::$conexion->connect_error);
-            }
-
-            // Opcional: establecer codificación utf8
-            self::$conexion->set_charset("utf8");
+        if ($conexion === false) {
+            die("Error: no se puede conectar" . mysqli_connect_error());
         }
 
-        return self::$conexion;
+        return $conexion;
     }
 }

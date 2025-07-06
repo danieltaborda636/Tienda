@@ -9,7 +9,7 @@ include 'views/layouts/header.php';
 $carrito = $_SESSION['carrito'] ?? [];
 ?>
 
-<h2>🛒 Carrito de Compras</h2>
+<h2>Carrito de Compras</h2>
 
 <?php if (empty($carrito)): ?>
     <p>Tu carrito está vacío.</p>
@@ -31,7 +31,7 @@ $carrito = $_SESSION['carrito'] ?? [];
         ?>
         <tr>
             <td><?= htmlspecialchars($item['nombre']) ?></td>
-            <td><img src="/tienda_motos/Tienda/archivos-subidos/productos/<?= htmlspecialchars($item['imagen']) ?>" width="50"></td>
+            <td><img src="/tienda_motos/Tienda/uploads/productos/<?= htmlspecialchars($item['imagen']) ?>" width="50"></td>
             <td>$<?= number_format($item['precio'], 0, ',', '.') ?></td>
             <td>
                 <form action="/tienda_motos/Tienda/controllers/carritoController.php" method="post" class="form-cantidad">
@@ -41,7 +41,6 @@ $carrito = $_SESSION['carrito'] ?? [];
                            class="cantidad-input" id="cantidad-input-<?= $item['id'] ?>" style="display:none;">
                     <button type="button" onclick="activarEdicion(<?= $item['id'] ?>)">✏️</button>
                     <button type="submit" class="btn-guardar" id="guardar-btn-<?= $item['id'] ?>" style="display:none;">✅</button>
-
                 </form>
             </td>
             <td>$<?= number_format($subtotal, 0, ',', '.') ?></td>
@@ -57,24 +56,20 @@ $carrito = $_SESSION['carrito'] ?? [];
         </tr>
     </table>
     <br>
-    
     <button class="btn-vaciar">
         <a class="vaciar_carrito" href="/tienda_motos/Tienda/carrito" onclick="return confirm('¿Vaciar el carrito?')">🗑️ Vaciar carrito</a>
     </button>
-    
-    <button class="btn-pedido">
-        <a class="hacer_carrito" href="/tienda_motos/Tienda/hacerPedido.php" onclick="return confirm('¿Deseas hacer el pedido?')">hacer pedido</a>
-    </button>
+    <button class="btn-pedido" ><a href="hacerPedido.php">Hacer pedido</a></button>
     <?php endif; ?>
 
 <script>
-// Activa edición por fila
 function activarEdicion(id) {
     document.getElementById('cantidad-texto-' + id).style.display = 'none';
     document.getElementById('cantidad-input-' + id).style.display = 'inline-block';
     document.getElementById('guardar-btn-' + id).style.display = 'inline-block';
 }
 </script>
+
 
 </div>
 

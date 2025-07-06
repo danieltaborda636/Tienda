@@ -4,35 +4,29 @@ session_start();
 include 'views/layouts/header.php';
 include 'config/parametros.php';
 ?>
-<link rel="stylesheet" href="http://localhost/tienda_motos/Tienda/assets/css/inicio.css">
+<link rel="stylesheet" href="assets/css/inicio.css">
 
 <div class="contenedor">
     <ul>
         <?php if (!isset($_SESSION['usuario'])): ?>
             <li><a class="text" href="views/user/login.php">Iniciar sesión</a></li><br>
             <li><a class="text" href="views/user/registro.php">Registrarse</a></li><br>
-
-
         <?php elseif ($_SESSION['usuario']['rol'] === 'admin'): ?>
-            <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
+            <h1><li><p class="text">Bienvenido, <a class="tex"><?= htmlspecialchars($_SESSION['usuario']['nombre']); ?></a></p></li></h1>
             <li><a class="text" href="./carrito.php">Ver carrito</a></li><br>
             <li><a class="text" href="#">Mis pedidos</a></li><br>
-            <li><a class="text" href="#">Gestionar Pedidos</a></li><br>
+            <li><a class="text" href="./productos.php">Gestionar producto</a></li><br>
             <li><a class="text" href="./crear_producto.php">Crear producto</a></li><br>
             <li><a class="text" href="views/user/categoria.php">Crear categoría</a></li><br>
-            <li><a class="text" href="./categorias.php">Gestionar categoria</a></li><br>
+            <li><a class="text" href="./categorias.php">Gestionar categoría</a></li><br>
             <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>
-            
-
         <?php else: ?>
-            <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
-            <li><a class="text" href="#">Mis pedidos</a></li>
+            <li><p class="text">Bienvenido, <a class="tex"><?= htmlspecialchars($_SESSION['usuario']['nombre']); ?></a></p></li>
+            <li><a class="text" href="#">Mis pedidos</a></li><br>
             <li><a class="text" href="./carrito.php">Ver carrito</a></li><br>
             <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>
         <?php endif; ?>
     </ul>
-
-   
 </div>
 
 <div class="granContenedor">
@@ -47,10 +41,12 @@ include 'config/parametros.php';
         <div class="product-grid">
             <?php while ($prod = $productos->fetch_assoc()): ?>
                 <div class="product-card">
-                    <img src="archivos-subidos/productos/<?= $prod['imagen'] ?>" alt="<?= $prod['nombre'] ?>">
-                    <h3><?= $prod['nombre'] ?></h3>
+                    <img src="uploads/productos/<?= htmlspecialchars($prod['imagen']) ?>" 
+                         alt="<?= htmlspecialchars($prod['nombre']) ?>" 
+                         onerror="this.onerror=null; this.src='assets/img/no-image.png';">
+                    <h3><?= htmlspecialchars($prod['nombre']) ?></h3>
                     <p>$<?= number_format($prod['precio'], 0, ',', '.') ?></p>
-                    <a href="/tienda_motos/Tienda/?view=producto&id=<?= $prod['id'] ?>" class="btn">Comprar</a>
+                    <a href="?view=producto&id=<?= $prod['id'] ?>" class="btn">Comprar</a>
                 </div>
             <?php endwhile; ?>
         </div>
@@ -58,5 +54,4 @@ include 'config/parametros.php';
 </div>
 
 <?php include 'views/layouts/footer.php'; ?>
-
 </div>

@@ -1,0 +1,100 @@
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedores{
+    padding-top: 50px;
+    width: 100%;
+    height: 60%;
+}
+h2, h3 {
+    color: #00ffff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 40px;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 10px #00ffff66;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid #00ffff44;
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #00ffff22;
+    color: #00ffff;
+    text-shadow: 0 0 3px #00ffff;
+}
+
+a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+form {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffff66;
+    width: 350px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    color: #00ffff;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    border: 1px solid #00ffff55;
+    background-color: #111;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #00ffff33 inset;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #00aaff;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0 0 10px #00ffff88;
+}
+
+input[type="submit"]:hover {
+    background-color: #00ffff;
+    transform: scale(1.05);
+    color: #000;
+}

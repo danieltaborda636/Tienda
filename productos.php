@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -70,9 +71,11 @@ $categorias = obtenerCategorias($conexion);
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="assets/css/gestionproducto.css">
     <title>Gestión de Productos</title>
 </head>
 <body>
+    <div class="contenedores">
     <h2>Productos</h2>
     <table border="1">
         <tr>
@@ -125,6 +128,7 @@ $categorias = obtenerCategorias($conexion);
         <input type="submit" name="guardar_edicion" value="Guardar Cambios">
     </form>
     <?php endif; ?>
+</div>
 </body>
 </html>
 <?php include 'views/layouts/footer.php'; ?>

@@ -57,9 +57,11 @@ $categorias = obtenerCategorias($conexion);
 <!DOCTYPE html>
 <html>
 <head>
+     <link rel="stylesheet" href="assets/css/gestioncategoria.css">
     <title>Gestión de Categorías</title>
 </head>
 <body>
+    <div class="contenedores">
     <h2>Categorías</h2>
 
     <?php if (!empty($mensaje)): ?>
@@ -107,6 +109,7 @@ $categorias = obtenerCategorias($conexion);
             </tr>
         <?php endforeach; ?>
     </table>
+    </div>
 </body>
 </html>
 <?php include 'views/layouts/footer.php'; ?>
