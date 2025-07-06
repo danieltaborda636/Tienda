@@ -77,7 +77,6 @@ $resultado_categorias = mysqli_query($conexion, $sql_categorias);
 
         <label for="img">Imagen del producto:</label><br>
         <input class="imagen "type="file" id="img" name="img" accept="image/*" required><br>
-
         <button class="guardar" type="submit">Guardar producto</button>
 </div>
     </form>
