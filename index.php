@@ -20,12 +20,14 @@ include 'config/parametros.php';
             <li><a class="text" href="#">Gestionar Pedidos</a></li><br>
             <li><a class="text" href="./crear_producto.php">Crear producto</a></li><br>
             <li><a class="text" href="views/user/categoria.php">Crear categoría</a></li><br>
+            <li><a class="text" href="./categorias.php">Gestionar categoria</a></li><br>
             <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>
+            
 
         <?php else: ?>
             <li><p class="text">Bienvenido, <a class="tex"><?= $_SESSION['usuario']['nombre']; ?></a></p></li>
             <li><a class="text" href="#">Mis pedidos</a></li>
-            <li><a class="text" href="#">Ver carrito</a></li>
+            <li><a class="text" href="./carrito.php">Ver carrito</a></li><br>
             <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>
         <?php endif; ?>
     </ul>
