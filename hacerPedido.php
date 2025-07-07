@@ -1,18 +1,26 @@
-
 <?php
 session_start();
 include 'views/layouts/header.php';
-
 $mensaje = "";
 
+// Verificamos si el usuario está autenticado
+if (!isset($_SESSION['usuario'])) {
+    echo "Debes iniciar sesión para hacer un pedido.";
+    exit();
+}
+
+$usuario_id = $_SESSION['usuario']['id'];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $direccion = $_POST['direccion'];
-    $ciudad = $_POST['ciudad'];
-    $departamento = $_POST['departamento'];
-    $contacto = $_POST['contacto'];
+    $direccion = $_POST['direccion'] ?? '';
+    $ciudad = $_POST['ciudad'] ?? '';
+    $departamento = $_POST['departamento'] ?? '';
+    $contacto = $_POST['contacto'] ?? '';
 
     if (empty($direccion) || empty($ciudad) || empty($departamento) || empty($contacto)) {
-        $mensaje = "<p style='color:red;'>Todos los campos son obligatorios.</p>";
+        $mensaje = "Todos los campos son obligatorios.";
+    } elseif (empty($_SESSION['carrito'])) {
+        $mensaje = "Tu carrito está vacío.";
     } else {
         $conexion = new mysqli("localhost", "root", "", "tienda_sena");
 
@@ -20,56 +28,72 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Error de conexión: " . $conexion->connect_error);
         }
 
-        $sql = "INSERT INTO pedidos (direccion, ciudad, departamento, contacto)
-        VALUES (?, ?, ?, ?)";
-        $stmt = $conexion->prepare($sql);
-        $stmt->bind_param("ssss", $direccion, $ciudad, $departamento, $contacto);
+        $sqlPedido = "INSERT INTO pedidos (usuario_id, direccion, ciudad, departamento, contacto) VALUES (?, ?, ?, ?, ?)";
+        $stmtPedido = $conexion->prepare($sqlPedido);
+        $stmtPedido->bind_param("issss", $usuario_id, $direccion, $ciudad, $departamento, $contacto);
 
+        if ($stmtPedido->execute()) {
+            $pedido_id = $stmtPedido->insert_id;
+            $stmtPedido->close();
 
-        if ($stmt->execute()) {
-            $mensaje = "Pedido confirmado correctamente.</p>";
-            unset($_SESSION['carrito']); // Limpia el carrito
+            $sqlLinea = "INSERT INTO lineas_pedidos (pedido_id, producto_id, unidades) VALUES (?, ?, ?)";
+            $stmtLinea = $conexion->prepare($sqlLinea);
+
+            foreach ($_SESSION['carrito'] as $producto) {
+                $producto_id = $producto['id'];
+                $cantidad = $producto['cantidad'];
+                $stmtLinea->bind_param("iii", $pedido_id, $producto_id, $cantidad);
+                $stmtLinea->execute();
+            }
+
+            $stmtLinea->close();
+            $conexion->close();
+
+            unset($_SESSION['carrito']);
+            $mensaje = "¡Pedido realizado con éxito!";
         } else {
-            $mensaje = "<p style='color:red;'>Error al guardar el pedido.</p>";
+            $mensaje = "Error al guardar el pedido: " . $conexion->error;
         }
-
-        $stmt->close();
-        $conexion->close();
     }
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Hacer Pedido</title>
     <link rel="stylesheet" href="assets/css/pedido.css">
-
-
 </head>
 <body>
-    <form class="formulario" method="POST" action="">
-        <h2>Hacer Pedido</h2>
 
-        <div class="carrito">
-            <strong>Productos en el carrito:</strong><br>
-            <?php
-            if (!empty($_SESSION['carrito'])) {
-                foreach ($_SESSION['carrito'] as $item) {
-                    echo "<p>{$item['cantidad']} x {$item['nombre']} - $" . number_format($item['precio']) . "</p>";
-                }
-            } else {
-                echo "<p>No hay productos en el carrito.</p>";
-            }
-            ?>
-        </div>
-    <h2>Hacer Pedido</h2>
-    <form action="procesar_pedido.php" method="POST">
-        <input type="text" name="direccion" placeholder="Dirección" required><br>
-        <input type="text" name="ciudad" placeholder="Ciudad" required><br>
-        <input type="text" name="departamento" placeholder="Departamento" required><br>
-        <input type="text" name="contacto" placeholder="Número de Contacto" required><br>
-        <button type="submit">Confirmar Pedido</button>
-    </form>
+<h2>Hacer Pedido</h2>
+
+<?php
+if (!empty($mensaje)) {
+    echo "<p>$mensaje</p>";
+}
+?>
+
+<h3>Tu carrito:</h3>
+<?php
+if (!empty($_SESSION['carrito'])) {
+    foreach ($_SESSION['carrito'] as $item) {
+        echo "{$item['cantidad']} x {$item['nombre']} - $" . number_format($item['precio']) . "<br>";
+    }
+} else {
+    echo "Tu carrito está vacío.";
+}
+?>
+
+<form method="POST" action="">
+    <p><input type="text" name="direccion" placeholder="Dirección" required></p>
+    <p><input type="text" name="ciudad" placeholder="Ciudad" required></p>
+    <p><input type="text" name="departamento" placeholder="Departamento" required></p>
+    <p><input type="text" name="contacto" placeholder="Número de Contacto" required></p>
+    <p><button type="submit">Confirmar Pedido</button></p>
+</form>
+
+</body>
+</html>
 <?php include 'views/layouts/footer.php'; ?>

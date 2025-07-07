@@ -3,16 +3,23 @@ session_start();
 require_once '../config/database.php';
 require_once '../models/User.php';
 
-
+// INICIAR SESIÓN
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     $email    = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    $user = new user();
+    $user = new User(); // Asegúrate de que la clase esté con mayúscula: User
     $usuario = $user->login($email, $password);
 
     if ($usuario) {
-        $_SESSION['usuario'] = $usuario;
+        // Guardar todos los datos importantes del usuario, incluyendo el rol
+        $_SESSION['usuario'] = [
+            'id'        => $usuario['id'],
+            'nombre'    => $usuario['nombre'],
+            'apellidos' => $usuario['apellidos'],
+            'email'     => $usuario['email'],
+            'rol'       => $usuario['rol'] // 🔹 Agregado el rol aquí
+        ];
         header("Location: ../index.php");
         exit;
     } else {
@@ -21,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     }
 }
 
+// REGISTRO DE USUARIO
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enviar'])) {
     $Nombre    = trim($_POST["Nombre"]);
     $Apellidos = trim($_POST["Apellidos"]);
@@ -31,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enviar'])) {
         header("Location: ./../views/user/registro.php?view=register&registro=campos_invalidos");
         exit;
     } else {
-        $user = new user();
+        $user = new User();
         $registrado = $user->registrar($Nombre, $Apellidos, $email, $password);
 
         if ($registrado === true) {
@@ -44,7 +52,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['enviar'])) {
             header("Location: ./../views/user/registro.php?view=register&registro=error");
             exit;
         }
-
     }
 }
-?>
