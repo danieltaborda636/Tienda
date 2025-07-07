@@ -14,7 +14,7 @@
     <?php while ($pedido = $resultado->fetch_assoc()): ?>
     <tr>
         <td><?= $pedido['id'] ?></td>
-        <!--<td><?= $pedido['id_usuario'] ?></td>-->
+        <td><?= $pedido['usuario_id'] ?></td>
         <td><?= $pedido['direccion'] ?></td>
         <td><?= $pedido['ciudad'] ?></td>
         <td><?= $pedido['departamento'] ?></td>
