@@ -42,12 +42,9 @@ $res_productos = mysqli_query($conexion, $sql_productos);
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($categoria_nombre) ?> | VCJ Motos</title>
     <link rel="stylesheet" href="assets/css/filtro.css"> 
-    <!-- Asegúrate de tener este archivo -->
-
-     
 </head>
 <body>
-<div class="contenedores">
+<div class="contenedores" style="margin-top: 150px;"> <!-- bajamos el contenido -->
     <h2>Productos en: <?= htmlspecialchars($categoria_nombre) ?></h2>
 
     <div class="productos-grid">
@@ -55,7 +52,8 @@ $res_productos = mysqli_query($conexion, $sql_productos);
             <?php while ($producto = mysqli_fetch_assoc($res_productos)): ?>
                 <div class="product-card">
                     <?php if (!empty($producto['imagen'])): ?>
-                        <img src="<?= htmlspecialchars($producto['imagen']) ?>" alt="<?= htmlspecialchars($producto['nombre']) ?>" width="150">
+                        <img src="uploads/productos/<?= htmlspecialchars($producto['imagen']) ?>" 
+                             alt="<?= htmlspecialchars($producto['nombre']) ?>" width="150">
                     <?php else: ?>
                         <div style="width:150px; height:150px; background:#ddd;">Sin imagen</div>
                     <?php endif; ?>
