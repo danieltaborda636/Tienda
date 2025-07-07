@@ -33,12 +33,12 @@ button{
     height: 30px;
     border-radius: 10px;
     /* background-color: rgb(93, 131, 255); */
-    background: #00ffff;
+    background: #00ffff66;
     color: black;
 }
 button:hover{
     /* background-color: rgba(0, 43, 184, 0.699); */
-    background: #00ffff66;
+    background: #00ffff;
     cursor: pointer;
     transform: scale(1.05);
 }
