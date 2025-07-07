@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+include 'views/layouts/header.php';
 
 $mensaje = "";
 
@@ -43,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Hacer Pedido</title>
+    <link rel="stylesheet" href="assets/css/pedido.css">
 
 
 </head>
@@ -70,3 +72,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" name="contacto" placeholder="Número de Contacto" required><br>
         <button type="submit">Confirmar Pedido</button>
     </form>
+<?php include 'views/layouts/footer.php'; ?>
