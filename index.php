@@ -14,7 +14,7 @@ include 'config/parametros.php';
         <?php elseif ($_SESSION['usuario']['rol'] === 'admin'): ?>
             <h1><li><p class="text">Bienvenido, <a class="tex"><?= htmlspecialchars($_SESSION['usuario']['nombre']); ?></a></p></li></h1>
             <li><a class="text" href="./carrito.php">Ver carrito</a></li><br>
-            <li><a class="text" href="controllers/PedidoController.php?action=ver">🧾 Ver pedidos</a></li><br>
+            <li><a class="text" href="controllers/PedidoController.php?action=ver">Ver pedidos</a></li><br>
             <li><a class="text" href="./productos.php">Gestionar productos</a></li><br>
             <li><a class="text" href="./crear_producto.php">Crear producto</a></li><br>
             <li><a class="text" href="views/user/categoria.php">Crear categoría</a></li><br>
