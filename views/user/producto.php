@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
 
     if ($producto):
 ?>
-    <link rel="stylesheet" href="/tienda_motos/Tienda/assets/css/producto.css">
+    <link rel="stylesheet" href="/tienda_motos/Tienda/assets/css/producto.css"> 
 
     <div class="detalle-producto">
         <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
