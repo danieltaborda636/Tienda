@@ -4,7 +4,7 @@ require_once 'config/database.php';
 include 'config/parametros.php';
 include 'views/layouts/header.php';
 
-$conexion = Database::connect(); // Conexión a la BD
+$conexion = Database::connect();
 
 // Mostrar errores
 error_reporting(E_ALL);
@@ -50,18 +50,16 @@ if (isset($_GET['eliminar'])) {
     }
 }
 
-// Obtener categorías
 $categorias = obtenerCategorias($conexion);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-     <link rel="stylesheet" href="assets/css/gestioncategoria.css">
     <title>Gestión de Categorías</title>
+    <link rel="stylesheet" href="assets/css/gestioncategoria.css">
 </head>
 <body>
-    <div class="contenedores">
     <h2>Categorías</h2>
 
     <?php if (!empty($mensaje)): ?>
@@ -92,7 +90,7 @@ $categorias = obtenerCategorias($conexion);
         <hr>
     <?php endif; ?>
 
-    <table border="1" cellpadding="5">
+    <table border="1" cellpadding="5" cellspacing="0">
         <tr>
             <th>ID</th>
             <th>Nombre</th>
@@ -103,13 +101,13 @@ $categorias = obtenerCategorias($conexion);
                 <td><?= $cat['id'] ?></td>
                 <td><?= htmlspecialchars($cat['nombre']) ?></td>
                 <td>
-                    <a href="categorias.php?editar=<?= $cat['id'] ?>">✏️ Editar</a> |
-                    <a href="categorias.php?eliminar=<?= $cat['id'] ?>" onclick="return confirm('¿Eliminar esta categoría?')">🗑️ Eliminar</a>
+                    <a href="categorias.php?editar=<?= $cat['id'] ?>">Editar</a> |
+                    <a href="categorias.php?eliminar=<?= $cat['id'] ?>" onclick="return confirm('¿Eliminar esta categoría?')">Eliminar</a>
                 </td>
             </tr>
         <?php endforeach; ?>
     </table>
-    </div>
 </body>
 </html>
+
 <?php include 'views/layouts/footer.php'; ?>
