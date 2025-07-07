@@ -1,8 +1,11 @@
 .contenedores{
-    margin-top: 4%;
+    margin-top: 50px;
 }
 body{
     background-color: #c0c0c0;
+}
+.productos-grid{
+    display: flex;
 }
 .product-grid {
     display: grid;

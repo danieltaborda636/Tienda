@@ -44,10 +44,11 @@ $res_productos = mysqli_query($conexion, $sql_productos);
     <link rel="stylesheet" href="assets/css/filtro.css"> 
 </head>
 <body>
-<div class="contenedores" style="margin-top: 150px;"> <!-- bajamos el contenido -->
+<div class="contenedores"> <!-- bajamos el contenido -->
     <h2>Productos en: <?= htmlspecialchars($categoria_nombre) ?></h2>
 
     <div class="productos-grid">
+        
         <?php if ($res_productos && mysqli_num_rows($res_productos) > 0): ?>
             <?php while ($producto = mysqli_fetch_assoc($res_productos)): ?>
                 <div class="product-card">
@@ -57,6 +58,7 @@ $res_productos = mysqli_query($conexion, $sql_productos);
                     <?php else: ?>
                         <div style="width:150px; height:150px; background:#ddd;">Sin imagen</div>
                     <?php endif; ?>
+                    
                     
                     <h4><?= htmlspecialchars($producto['nombre']) ?></h4>
                     <p>$<?= number_format($producto['precio'], 0, ',', '.') ?></p>
