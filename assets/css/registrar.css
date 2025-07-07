@@ -1,11 +1,12 @@
 body{
-    background-color: #c0c0c0;
-    /* background-color: #17181A; */
-
+    /* background-color: #c0c0c0; */
+    background-color: #0e0e0e;
+    color: #fff;
 }
 form{
     top: 0;
-    background-color: #c0c0c0;
+    /* background-color: #c0c0c0; */
+    background-color: #0e0e0e;
     /* background-color: #17181A; */
     position:static;
     width: 30%;
@@ -19,6 +20,8 @@ form{
 input{
     height: 30px;
     border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 0 0 15px #00ffff66;
 }
 input:hover{
         transform: scale(1.02);
@@ -34,7 +37,7 @@ input:hover{
 }
  img{
     width: 42rem;
-    height: 30rem;
+    height: 25rem;
     float: right;
     margin-right: 80px;
     /* margin-top: 30px; */
@@ -42,20 +45,21 @@ input:hover{
 .btn-registrar{
     border-radius: 5px;
     height: 30px;
-    background: #fffdfd;
+    /* background: #fffdfd; */
+    background: #00ffff66;
 }
 .btn-registrar:hover{
     transform: scale(1.05);
     cursor: pointer;
-    background: #24242436;
+    background: #00ffff;
 }
 .btn-atras{
     border-radius: 5px;
     height: 30px;
-    background: #fffdfd;
+    background: #00ffff66;
 }
 .btn-atras:hover{
     transform: scale(1.05);
     cursor: pointer;
-    background: #24242436;
+    background: #00ffff;
 }

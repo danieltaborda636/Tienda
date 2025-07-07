@@ -3,12 +3,19 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url('../img/m1000r.jpeg');
-    background-color: #c0c0c0;
+    background-image: url('../img/m1000rr.jpeg');
+    /* background-color: #c0c0c0; */
+    background-color: #0e0e0e;
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center bottom 34%;
     background-attachment: scroll;
+}
+h1{
+    color: #fff;
+}
+p.parrafos{
+    color: #fff;
 }
 .contenedor{
     margin-top: 100px;
@@ -25,11 +32,13 @@ input:hover{
 button{
     height: 30px;
     border-radius: 10px;
-    background-color: rgb(93, 131, 255);
-    color: white;
+    /* background-color: rgb(93, 131, 255); */
+    background: #00ffff;
+    color: black;
 }
 button:hover{
-    background-color: rgba(0, 43, 184, 0.699);
+    /* background-color: rgba(0, 43, 184, 0.699); */
+    background: #00ffff66;
     cursor: pointer;
     transform: scale(1.05);
 }

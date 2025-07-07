@@ -4,7 +4,8 @@
     width: 100%;
     height: 100%;
     margin-top: 4rem;
-    background-color: #c0c0c0;
+    /* background-color: #c0c0c0; */
+    background-color: #0e0e0e;
     /* border-left: 2px solid black;
     border-right: 2px solid black;
     border-top: 2px solid black; */
@@ -16,6 +17,7 @@
 } */
 body{
     margin: 3px;
+    color: white;
 }
 form{
     top: 20px;
@@ -26,7 +28,7 @@ h1{
 }
 img{
     width: 42rem;
-    height: 30rem;
+    height: 28rem;
     float: right;
     margin-right: 3px;
     /* margin-top: 30px; */
@@ -35,29 +37,33 @@ input{
     height: 30px;
     width: 250px;
     border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 0 0 15px #00ffff66;
 }
 input:hover{
-        transform: scale(1.02);
+    transform: scale(1.02);
 
 }
 .btn-iniciar{
     border-radius: 5px;
     height: 30px;
-    background: #fffdfd;
+    /* background: #fffdfd; */
+    background: #00ffff66;
 }
 .btn-iniciar:hover{
     transform: scale(1.05);
     cursor: pointer;
-    background: #24242436;
-
+    background: #00ffff;
+    
 }
 .btn-atras{
     border-radius: 5px;
     height: 30px;
-    background: #fffdfd;
+    /* background: #fffdfd; */
+    background: #00ffff66;
 }
 .btn-atras:hover{
     transform: scale(1.05);
+    background: #00ffff;
     cursor: pointer;
-    background: #24242436;
 }

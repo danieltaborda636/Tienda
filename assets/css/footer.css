@@ -1,19 +1,17 @@
 #pie{
     position: fixed;
     bottom: 0;
-    width: 99%;
-    left: 7px;
-    right: 7px;
+    width: 100%;
     height: 35px;
     /* background-color: rgb(255, 255, 255); */
     /* background-color: #17181A; */
     background-color: #1a1a1a;
     /* border: 2px solid black; */
-    right: 2px;
 }
-.parrafo{
+p.parrafo{
     position: absolute;
-    top: -20%;
+    top: -12px;
+    text-align: center;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;

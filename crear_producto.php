@@ -52,16 +52,16 @@ $resultado_categorias = mysqli_query($conexion, $sql_categorias);
         <!-- ✅ Corrige esta línea para apuntar al archivo correcto y usar método POST -->
         <form action="controllers/controladorproductos.php?action=store" method="POST" enctype="multipart/form-data">
             <label for="nombre">Nombre del producto:</label><br>
-            <input type="text" id="nombre" name="nombre" required><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
 
             <label for="descripcion_producto">Descripción:</label><br>
-            <textarea id="descripcion_producto" name="descripcion_producto" rows="4" cols="50" required></textarea><br>
+            <textarea id="descripcion_producto" name="descripcion_producto" rows="4" cols="50" required></textarea><br><br>
 
             <label for="precio">Precio:</label><br>
-            <input type="number" id="precio" name="precio" step="0.01" min="0" required><br>
+            <input type="number" id="precio" name="precio" step="0.01" min="0" required><br><br>
 
             <label for="stock">Stock:</label><br>
-            <input type="number" id="stock" name="stock" min="0" required><br>
+            <input type="number" id="stock" name="stock" min="0" required><br><br>
     </div>
 
     <div class="crearproducto">

@@ -7,7 +7,7 @@ include '../../config/parametros.php';
 <link rel="stylesheet" href="<?= base_url ?>/assets/css/login.css">
 <!-- <div class="Todo"> -->
 <div class="containerLogin">
-    <img src="../../assets/img/s1000rrr.jpeg" alt="">
+    <img src="../../assets/img/s1000rr.jpeg" alt="">
     <h1>Iniciar sesión</h1>
     <?php if (isset($_GET['login'])): ?>
         <div class="mensaje">

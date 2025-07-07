@@ -23,7 +23,7 @@ include '../../config/parametros.php';
           </div>
           <?php endif; ?>
           <div class="formulario">
-        <img class="imagen-moto" src="../../assets/img/R11.jpeg" alt="">
+        <img class="imagen-moto" src="../../assets/img/R1.jpeg" alt="">
         
           <h1 class="titulos">Registrate</h1>
           <form action="<?= base_url ?>/controllers/UserController.php" method="POST">

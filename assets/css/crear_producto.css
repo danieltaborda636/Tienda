@@ -3,8 +3,9 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url('../img/xj6.jpeg');
-    background-color: #c0c0c0;
+    background-image: url('../img/xj66.jpeg');
+    background-color: #0e0e0e;
+    color: white;
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center bottom 34%;
@@ -28,7 +29,9 @@ body{
 input{
     height: 35px;
     border-radius: 10px;
-    background-color: #c0c0c054;
+    background-color: transparent;
+    box-shadow: 0 0 10px #00ffff;
+    color: #fff;
 }
 input:hover{
     transform: scale(1.05);
@@ -36,7 +39,8 @@ input:hover{
 textarea{
     border-radius: 10px;
     /* background-color: transparent; */
-    background-color: #c0c0c054;
+    background-color: transparent;
+    box-shadow: 0 0 10px #00ffff;
 }
 textarea:hover{
     transform: scale(1.05);
@@ -61,8 +65,12 @@ body{
 }
 #oferta{
     background-color: #c0c0c054;
+    box-shadow: 0 0 10px #00ffff;
     border-radius: 5px;
     transform: scale(1.05);
+}
+input#img.imagen{
+    background-color: transparent;
 }
 .guardar{
     height: 30px;
@@ -70,11 +78,13 @@ body{
     margin-top: 30px;
     /* background-color: #cececeaf; */
     /* background-color: rgba(0, 60, 255, 0.726); */
-    background-color: rgb(93, 131, 255);
-    color: white;
+    /* background-color: rgb(93, 131, 255); */
+    background: #00ffff66;
+    color: black;
 }
 .guardar:hover{
-    background-color: rgba(0, 43, 184, 0.699);
+    /* background-color: rgba(0, 43, 184, 0.699); */
+    background: #00ffff;
     cursor: pointer;
     transform: scale(1.05);
 

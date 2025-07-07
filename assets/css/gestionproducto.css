@@ -98,3 +98,15 @@ input[type="submit"]:hover {
     transform: scale(1.05);
     color: #000;
 }
+button{
+    margin-top: 7px;
+    height: 30px;
+    background: #00ffff66;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #00ffff;
+}
+button:hover{
+    background: #00ffff;
+    transform: scale(1.05);
+    cursor: pointer;
+}
