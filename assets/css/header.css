@@ -55,7 +55,7 @@
 }
 .menu li {
     position: relative;
-    padding:  3 15px;
+    padding: 5px;
 }
 
 /* Agrega la barra | después de cada <li> excepto el último */
