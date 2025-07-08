@@ -65,11 +65,11 @@ $resultado_categorias = mysqli_query($conexion, $sql_categorias);
     </div>
 
     <div class="crearproducto">
-            <label for="oferta">¿Está disponible?</label><br>
+            <!-- <label for="oferta">¿Está disponible?</label><br>
             <select id="oferta" name="oferta">
                 <option value="SI">Sí</option>
                 <option value="NO">No</option>
-            </select><br><br>
+            </select><br><br> -->
 
             <label for="categoria_id">Categoría:</label><br>
             <select id="categoria_id" name="categoria_id" required>
