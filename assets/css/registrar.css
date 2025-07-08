@@ -25,7 +25,7 @@ input{
     color: #fff;
 }
 input:hover{
-        transform: scale(1.02);
+    transform: scale(1.02);
 
 }
 .atras{
@@ -53,6 +53,10 @@ input:hover{
     transform: scale(1.05);
     cursor: pointer;
     background: #00ffff;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
 .btn-atras{
     border-radius: 5px;

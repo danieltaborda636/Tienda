@@ -37,7 +37,7 @@ include '../../config/parametros.php';
             <input type="password" placeholder="  Contraseña" name="password">
             </br><br>
             <button class="btn-registrar"type="submit" name="enviar">Registrar</button>
-            <button ><a href="../../index.php">atras</a></button>
+            <button class="btn-atras"><a href="../../index.php">Atrás</a></button>
             <!-- <button><a href="index.php"></a>Atras</button> -->
             <!-- <button type="button" onclick="window.location.href='../../../index.php'">Atrás</button> -->
           
