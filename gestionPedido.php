@@ -54,7 +54,6 @@ $pedidos = obtenerPedidos($conexion);
             <th>Departamento</th>
             <th>Contacto</th>
             <th>Estado</th>
-            <th>Fecha</th>
             <th>Acciones</th>
         </tr>
         <?php foreach ($pedidos as $pedido): ?>
@@ -66,7 +65,7 @@ $pedidos = obtenerPedidos($conexion);
                 <td><?= htmlspecialchars($pedido['departamento']) ?></td>
                 <td><?= htmlspecialchars($pedido['contacto']) ?></td>
                 <td><?= htmlspecialchars($pedido['estado']) ?></td>
-                <td><?= $pedido['fecha'] ?></td>
+                <!-- <td><?= $pedido['fecha'] ?></td> -->
                 <td>
                     <form method="post" action="gestionpedido.php">
                         <input type="hidden" name="pedido_id" value="<?= $pedido['id'] ?>">
