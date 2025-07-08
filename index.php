@@ -25,7 +25,7 @@ include 'config/parametros.php';
             <li><a class="text" href="./categorias.php">Gestionar categorías</a></li><br>
             <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>
         <?php else: ?>
-            <h1></h1><li><p class="text">Bienvenido, <a class="tex"><?= htmlspecialchars($_SESSION['usuario']['nombre']); ?></a></p></li></h1>
+            <h1><li><p class="text">Bienvenido, <a class="tex"><?= htmlspecialchars($_SESSION['usuario']['nombre']); ?></a></p></li></h1>
            <li><a class="text" href="./verpedido.php">Ver pedidos</a></li><br>
             <li><a class="text" href="./carrito.php">Ver carrito</a></li><br>
             <li><a class="text" href="controllers/logout.php">Cerrar sesión</a></li>

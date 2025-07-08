@@ -25,7 +25,7 @@ $categorias = mysqli_query($conexion, $sql);
         <div class="container">
         <nav class="menu">
             <ul>
-                <li><a href="index.php">Inicio</a></li>
+                <li><a href="http://localhost/tienda_motos/Tienda/index.php">Inicio</a></li>
 
                 <?php if ($categorias && mysqli_num_rows($categorias) > 0): ?>
                     <?php while ($categoria = mysqli_fetch_assoc($categorias)): ?>
