@@ -62,7 +62,7 @@ $res_productos = mysqli_query($conexion, $sql_productos);
                     
                     <h4><?= htmlspecialchars($producto['nombre']) ?></h4>
                     <p>$<?= number_format($producto['precio'], 0, ',', '.') ?></p>
-                    <a href="comprar.php?id=<?= $producto['id'] ?>" class="btn">Comprar</a>
+                    
                 </div>
             <?php endwhile; ?>
         <?php else: ?>
