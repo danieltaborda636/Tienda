@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
             <form action="/tienda_motos/Tienda/controllers/carritoController.php" method="get" id="form-carrito">
                 <input type="hidden" name="agregar" value="<?= $producto['id'] ?>">
 
-                <div id="contenedor-cantidad" style="display: none; margin-top: 10px;">
+                <div id="contenedor-cantidad" style="display: none; margin-top: 5px;">
                     <label for="cantidad">Cantidad:</label>
                     <input type="number" name="cantidad" id="cantidad" value="1"
                            min="1" max="<?= $producto['stock'] ?>" required>

@@ -1,5 +1,5 @@
 body {
-     background-color: #c0c0c0;
+     background-color: #0A0A0A;
     color: #ffffff;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
@@ -7,15 +7,18 @@ body {
 }
 
 .detalle-producto {
+    height: 505px;
     max-width: 600px;
     margin: 0 auto;
-    padding: 25px;
     background-color: #161b22;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
     text-align: center;
 }
-
+img{
+    height: 200px;
+    width: 200px;
+}
 .detalle-producto h2 {
     color: #58a6ff;
     margin-bottom: 20px;
@@ -55,17 +58,20 @@ body {
     margin: 30px auto;
     font-weight: bold;
 }
-
+input#cantidad{
+    height: 30px;
+}
 /* Botón azul llamativo */
 .btn {
     background-color: #1f6feb;
     color: #ffffff;
     border: none;
+    height: 40px;
     padding: 12px 24px;
-    margin-top: 15px;
+    margin-top: 2px;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     transition: all 0.3s ease;
     box-shadow: 0 0 10px #1f6feb, 0 0 20px #1f6feb50;
 }
