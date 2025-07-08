@@ -1,0 +1,85 @@
+
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #0d0d0d;
+        color: #e0e0e0;
+        margin: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #00ffff; /* azul neón */
+        text-shadow: 0 0 5px #00ffff;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #1a1a1a;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+
+    th, td {
+        border: 1px solid #00ffff;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #000000;
+        color: #00ffff;
+        text-shadow: 0 0 3px #00ffff;
+    }
+
+    tr:nth-child(even) {
+        background-color: #141414;
+    }
+
+    tr:hover {
+        background-color: #222222;
+    }
+
+    select {
+        padding: 6px 10px;
+        background-color: #000000;
+        border: 1px solid #00ffff;
+        color: #00ffff;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+    button {
+        padding: 6px 14px;
+        background-color: #00ffff;
+        color: #000000;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s ease;
+        box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    }
+
+    button:hover {
+        background-color: #00bfbf;
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        table, th, td {
+            font-size: 13px;
+        }
+
+        form {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+

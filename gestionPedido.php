@@ -41,6 +41,7 @@ $pedidos = obtenerPedidos($conexion);
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Pedidos</title>
+    <link rel="stylesheet" href="assets/css/gestiopedido.css">
 </head>
 <body>
     <h2>Gestión de Pedidos</h2>
