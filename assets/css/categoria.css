@@ -24,7 +24,9 @@ p.parrafos{
 input{
     height: 30px;
     border-radius: 10px;
-    background-color: #c0c0c054;
+    color: #fff;
+    background-color: transparent;
+    box-shadow: 0 0 10px #00ffff;
 }
 input:hover{
     transform: scale(1.05);

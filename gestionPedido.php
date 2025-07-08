@@ -42,7 +42,7 @@ $pedidos = obtenerPedidos($conexion);
     <meta charset="UTF-8">
     <title>Gestión de Pedidos</title>
 <<<<<<< HEAD
-    <link rel="stylesheet" href="assets/css/gestiopedido.css">
+    <!-- <link rel="stylesheet" href="assets/css/gestiopedido.css"> -->
 =======
     <link rel="stylesheet" href="assets/css/tabla_gestion.css">
 >>>>>>> 240e05dcc1a361fa8f9cdba50af3c6f57e11e66f

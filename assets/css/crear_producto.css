@@ -37,6 +37,7 @@ input:hover{
     transform: scale(1.05);
 }
 textarea{
+    color: #fff;
     border-radius: 10px;
     /* background-color: transparent; */
     background-color: transparent;

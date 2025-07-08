@@ -1,7 +1,6 @@
  body {
     background-color: #0a0a0a;
     color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +12,8 @@
 }
 h2, h3 {
     color: #00ffff;
-    margin-bottom: 20px;
+    margin-top: 5%;
+    /* margin-bottom: 20px; */
 }
 
 table {
@@ -31,7 +31,7 @@ th, td {
 }
 
 th {
-    background-color: #004d4d;
+    background-color: #0e0e0e;
     color: #00ffff;
 }
 
