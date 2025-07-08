@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    color: #e6edf3;
+
+}
+
+h2, h3 {
+    color: #58a6ff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #161b22;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+table th, table td {
+    border: 1px solid #30363d;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #21262d;
+    color: #58a6ff;
+}
+
+a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    background-color: #0d1117;
+    color: #e6edf3;
+}
+
+input[type="submit"] {
+    background-color: #58a6ff;
+    color: #0d1117;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #1f6feb;
+}
+.boton-eliminar {
+    background-color: #cc0000; /* Rojo fuerte */
+    color: #ffffff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-eliminar:hover {
+    background-color: #ff1a1a; /* Rojo más claro al pasar el mouse */
+}
+.boton-editar {
+    background-color: #0055ff; /* Azul fuerte */
+    color: #ffffff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-editar:hover {
+    background-color: #3399ff; /* Azul cielo al pasar el mouse */
+}
