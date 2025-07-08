@@ -2,7 +2,8 @@
     margin-top: 50px;
 }
 body{
-    background-color: #c0c0c0;
+    background-color: #0e0e0e;
+    color: #fff;
 }
 .productos-grid{
     display: flex;
