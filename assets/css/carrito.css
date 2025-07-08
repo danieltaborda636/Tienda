@@ -154,6 +154,9 @@ td img:hover {
     transform: scale(1.1);
     box-shadow: 0 0 25px #00eaff;
 }
+a.btn-pedido{
+    text-decoration: none;
+}
 .btn-pedido {
     display: inline-block;
     padding: 15px 30px;

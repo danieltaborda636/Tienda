@@ -59,7 +59,7 @@ $carrito = $_SESSION['carrito'] ?? [];
     <button class="btn-vaciar">
         <a class="vaciar_carrito" href="/tienda_motos/Tienda/carrito" onclick="return confirm('¿Vaciar el carrito?')">🗑️ Vaciar carrito</a>
     </button>
-    <button class="btn-pedido" ><a href="hacerPedido.php">Hacer pedido</a></button>
+        <button class="btn-pedido" ><a href="hacerPedido.php">Hacer pedido</a></button>
     <?php endif; ?>
 
 <script>
