@@ -41,9 +41,14 @@ $pedidos = obtenerPedidos($conexion);
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Pedidos</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="assets/css/gestiopedido.css">
+=======
+    <link rel="stylesheet" href="assets/css/tabla_gestion.css">
+>>>>>>> 240e05dcc1a361fa8f9cdba50af3c6f57e11e66f
 </head>
 <body>
+<div class="Todo">
     <h2>Gestión de Pedidos</h2>
 
     <table border="1" cellpadding="6">
@@ -55,7 +60,6 @@ $pedidos = obtenerPedidos($conexion);
             <th>Departamento</th>
             <th>Contacto</th>
             <th>Estado</th>
-            <th>Fecha</th>
             <th>Acciones</th>
         </tr>
         <?php foreach ($pedidos as $pedido): ?>
@@ -67,7 +71,6 @@ $pedidos = obtenerPedidos($conexion);
                 <td><?= htmlspecialchars($pedido['departamento']) ?></td>
                 <td><?= htmlspecialchars($pedido['contacto']) ?></td>
                 <td><?= htmlspecialchars($pedido['estado']) ?></td>
-                <td><?= $pedido['fecha'] ?></td>
                 <td>
                     <form method="post" action="gestionpedido.php">
                         <input type="hidden" name="pedido_id" value="<?= $pedido['id'] ?>">
@@ -84,6 +87,7 @@ $pedidos = obtenerPedidos($conexion);
             </tr>
         <?php endforeach; ?>
     </table>
+</div>
 </body>
 </html>
 

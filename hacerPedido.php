@@ -67,15 +67,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<h2>Hacer Pedido</h2>
-
-<?php
+    
+    <?php
 if (!empty($mensaje)) {
     echo "<p>$mensaje</p>";
 }
 ?>
 
-<h3>Tu carrito:</h3>
 <?php
 if (!empty($_SESSION['carrito'])) {
     foreach ($_SESSION['carrito'] as $item) {
@@ -86,6 +84,8 @@ if (!empty($_SESSION['carrito'])) {
 }
 ?>
 
+<h2>Hacer Pedido</h2>
+<h3>Tu carrito:</h3>
 <form method="POST" action="">
     <p><input type="text" name="direccion" placeholder="Dirección" required></p>
     <p><input type="text" name="ciudad" placeholder="Ciudad" required></p>

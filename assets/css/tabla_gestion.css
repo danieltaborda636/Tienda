@@ -1,0 +1,24 @@
+body{
+    background-color: #0e0e0e;
+    color: #fff;
+}
+.Todo{
+    margin-top: 8%;
+    margin-left: 20%;
+}
+table{
+    box-shadow: 0 0 15px #00d0ff;
+}
+select{
+    background: #c5eff8da;
+    height: 25px;
+}
+button{
+    height: 25px;
+    background-color: #c5eff8da;
+}
+button:hover{
+    background-color: #c5eff8;
+    cursor: pointer;
+    transform: scale(1.05);
+}
